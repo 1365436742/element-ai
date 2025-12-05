@@ -10,9 +10,16 @@
     "docs:preview": "vitepress preview docs"
   },
   "peerDependencies": {
-    "vue": "^3.2.0"
+    "vue": "^3.4.0"
   },
   "devDependencies": {
+    "@element-ai/components": "workspace:*",
+    "@element-ai/constants": "workspace:*",
+    "@element-ai/directives": "workspace:*",
+    "@element-ai/hooks": "workspace:*",
+    "@element-ai/locale": "workspace:*",
+    "@element-ai/theme-chalk": "workspace:*",
+    "@element-ai/utils": "workspace:*",
     "vitepress": "2.0.0-alpha.15"
   },
   "engines": {
