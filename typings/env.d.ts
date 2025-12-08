@@ -1,2 +1,2 @@
-import "mdast";
-import "mdast-util-to-hast";
+import 'mdast'
+import 'mdast-util-to-hast'

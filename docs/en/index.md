@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "element-ai"
-  text: "Vue3 Component Library for the AI Era"
+  name: 'element-ai'
+  text: 'Vue3 Component Library for the AI Era'
   tagline: My great project tagline
   actions:
     - theme: brand
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

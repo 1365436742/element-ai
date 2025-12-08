@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "element-ai"
-  text: "企业级 AI 交互组件库"
-  image: "/logo.svg"
+  name: 'element-ai'
+  text: '企业级 AI 交互组件库'
+  image: '/logo.svg'
   actions:
     - theme: brand
       text: 快速开始
