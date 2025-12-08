@@ -1,26 +1,26 @@
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkGfm from "remark-gfm";
-import remarkBreaks from "remark-breaks";
-import rehypeStringify from "rehype-stringify";
-import remarkMath from "remark-math";
-import remarkRehype from "remark-rehype";
-import rehypeKatex from "rehype-katex";
-import DOMPurify from "dompurify";
-import { katexConfig } from "@element-ai/constants";
-import { remarkATargetBlank, remarkCustomSubSuper } from "./models";
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
+import rehypeStringify from 'rehype-stringify'
+import remarkMath from 'remark-math'
+import remarkRehype from 'remark-rehype'
+import rehypeKatex from 'rehype-katex'
+import DOMPurify from 'dompurify'
+import { katexConfig } from '@element-ai/constants'
+import { remarkATargetBlank, remarkCustomSubSuper } from './models'
 
 export interface ProcessMarkdownOptions {
-  onError?: (error: Error) => void;
+  onError?: (error: Error) => void
 }
 
 export const defaultCustomPlugins = [
   {
-    key: "remark-math",
+    key: 'remark-math',
     plugin: remarkMath,
   },
   {
-    key: "remark-a-target-blank",
+    key: 'remark-a-target-blank',
     plugin: remarkATargetBlank,
   },
   //   {
@@ -36,7 +36,7 @@ export const defaultCustomPlugins = [
   //     plugin: remarkCustomMarkHighlight,
   //   },
   {
-    key: "remark-custom-sub-super",
+    key: 'remark-custom-sub-super',
     plugin: remarkCustomSubSuper,
   },
   //   {
@@ -44,16 +44,16 @@ export const defaultCustomPlugins = [
   //     plugin: remarkCustomAbbr,
   //   },
   {
-    key: "remark-rehype",
+    key: 'remark-rehype',
     plugin: remarkRehype,
     options: { allowDangerousHtml: true },
   },
   {
-    key: "rehype-katex",
+    key: 'rehype-katex',
     plugin: rehypeKatex,
     options: katexConfig,
   },
-];
+]
 
 export const createMarkdownProcessor = (middlewarePlugins: any[]) => {
   const baseProcessor = unified()
@@ -61,25 +61,25 @@ export const createMarkdownProcessor = (middlewarePlugins: any[]) => {
     .use(remarkGfm, {
       singleTilde: false, // 关闭单波浪线的删除线语法
     })
-    .use(remarkBreaks);
+    .use(remarkBreaks)
   middlewarePlugins.forEach((item) => {
-    baseProcessor.use(item.plugin, item.options);
-  });
+    baseProcessor.use(item.plugin, item.options)
+  })
   const processor = baseProcessor.use(rehypeStringify, {
     allowDangerousHtml: true,
-  });
+  })
   return async (content: string, options: ProcessMarkdownOptions) => {
-    const { onError } = options || {};
+    const { onError } = options || {}
     try {
       // 预处理：转换 LaTeX 格式
       // const processedContent = latexPreProcessContent(content);
-      const result = await processor.process(content);
+      const result = await processor.process(content)
       return DOMPurify.sanitize(result.toString(), {
-        ADD_ATTR: ["target"],
-      });
+        ADD_ATTR: ['target'],
+      })
     } catch (error: any) {
-      onError?.(error);
-      return `<div class="error">处理错误: ${error.message}</div>`;
+      onError?.(error)
+      return `<div class="error">处理错误: ${error.message}</div>`
     }
-  };
-};
+  }
+}

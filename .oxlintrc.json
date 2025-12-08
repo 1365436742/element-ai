@@ -2,7 +2,7 @@
   "rules": {
     "no-unused-vars": "error",
     "eqeqeq": "warn",
-    "no-console": "off"
+    "no-console": "error"
   },
   "options": {
     "ignorePatterns": [".gitignore"]
