@@ -1,0 +1,5 @@
+@import 'github-markdown-css/github-markdown-light.css';
+
+html.dark {
+  @import 'github-markdown-css/github-markdown-dark.css';
+}

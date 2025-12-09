@@ -30,3 +30,5 @@ $ yarn add element-ai
 ```
 
 :::
+
+<DemoComponent />

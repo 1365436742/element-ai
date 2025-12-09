@@ -1,0 +1,9 @@
+@use '../mixins/config' as *;
+
+:root {
+  --#{$namespace}-color-primary: #409eff;
+  --#{$namespace}-color-success: #67c23a;
+  --#{$namespace}-color-warning: #e6a23c;
+  --#{$namespace}-color-danger: #f56c6c;
+  --#{$namespace}-color-info: #909399;
+}

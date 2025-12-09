@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { ElMarkdown } from '@element-ai/components'
 
 const count = ref(0)
 </script>
 
 <template>
   <div class="demo-component">
-    <h3>自定义 Vue 3 组件</h3>
-    <p>这是一个在 Markdown 中使用的自定义组件。</p>
+    <ElMarkdown content="你好"></ElMarkdown>
     <button @click="count++">点击次数: {{ count }}</button>
   </div>
 </template>

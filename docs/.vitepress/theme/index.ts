@@ -2,6 +2,7 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import '@element-ai/theme-chalk/src/index.scss'
 import DemoComponent from '../../components/DemoComponent.vue'
 import Layout from './Layout.vue'
 

@@ -1,9 +1,20 @@
 import { defineConfig } from 'vitepress'
+import { resolve } from 'path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'element-ai',
   description: 'ai时代的vue3组件库',
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^@element-ai\/(.+)$/,
+          replacement: resolve(__dirname, '../../packages/$1'),
+        },
+      ],
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     socialLinks: [

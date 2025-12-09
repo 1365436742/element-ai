@@ -10,6 +10,7 @@
   "include": [
     "packages/utils/vue3.3.polyfill.ts",
     "packages",
+    "docs",
     "typings/env.d.ts",
     "site/shims-vue.d.ts",
     "site/shims-tsx.d.ts",
