@@ -6,6 +6,7 @@ import {
 } from 'vitepress-plugin-group-icons'
 import { demoblockPlugin, demoblockVitePlugin } from 'vitepress-theme-demoblock'
 import { enNav, zhNav } from './nav'
+import path from 'path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -20,6 +21,38 @@ export default defineConfig({
   },
   vite: {
     plugins: [groupIconVitePlugin(), demoblockVitePlugin()],
+    resolve: {
+      alias: {
+        '@element-ai-vue/components': path.resolve(
+          __dirname,
+          '../../../packages/components'
+        ),
+        '@element-ai-vue/utils': path.resolve(
+          __dirname,
+          '../../../packages/utils'
+        ),
+        '@element-ai-vue/hooks': path.resolve(
+          __dirname,
+          '../../../packages/hooks'
+        ),
+        '@element-ai-vue/directives': path.resolve(
+          __dirname,
+          '../../../packages/directives'
+        ),
+        '@element-ai-vue/constants': path.resolve(
+          __dirname,
+          '../../../packages/constants'
+        ),
+        '@element-ai-vue/locale': path.resolve(
+          __dirname,
+          '../../../packages/locale'
+        ),
+        'element-ai-vue': path.resolve(
+          __dirname,
+          '../../../packages/element-ai-vue'
+        ),
+      },
+    },
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

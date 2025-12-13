@@ -11,12 +11,12 @@
     "packages/utils/vue3.3.polyfill.ts",
     "packages",
     "typings/env.d.ts",
-    "site/shims-vue.d.ts",
-    "site/shims-tsx.d.ts",
+    "typings/vue-shim.d.ts",
     "components/**/*.ts",
     "components/**/*.tsx",
     "components/**/*.vue",
-    "types/*.ts"
+    "types/*.ts",
+    "docs"
   ],
   "exclude": ["node_modules", "**/dist", "**/*.md"]
 }

@@ -1,1 +1,1 @@
-export const hooks = 'xxxx'
+export * from './use-namespace'

@@ -1,2 +1,3 @@
-@use 'markdown/index.scss';
+@use 'markdown/index.scss' as markdown;
+@use 'code-highlight/index.scss' as code-highlight;
 @import url('./font/iconfont.css');

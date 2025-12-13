@@ -1,12 +1,14 @@
 <template>
-  <div class="code-highlight">
+  <div :class="ns.b()">
     <slot name="header">
-      <div class="code-highlight-header">
-        <div class="language">{{ language }}</div>
+      <div :class="ns.e('header')">
+        <div :class="ns.e('language')">{{ language }}</div>
+      </div>
+      <div :class="ns.e('action')">
+        <span class="element-ai-vue-iconfont icon-fuzhi"></span>
       </div>
     </slot>
-    <span class="element-ai-vue-iconfont icon-fuzhi"></span>
-    <div v-html="htmlContent"></div>
+    <div :class="ns.e('content')" v-html="htmlContent"></div>
   </div>
 </template>
 
@@ -15,10 +17,12 @@ defineOptions({
   name: 'ElACodeHighlight',
 })
 import { commonLangs } from '@element-ai-vue/constants'
+import { useNamespace } from '@element-ai-vue/hooks'
 import { getHighlighter, HighlighterType } from '@element-ai-vue/utils'
 import { onMounted, ref, watch } from 'vue'
 import { codeHighlightProps } from './props'
 
+const ns = useNamespace('code-highlight')
 const props = defineProps({
   content: {
     type: String,

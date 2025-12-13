@@ -1,4 +1,8 @@
+@use 'sass:string';
 @use 'config' as *;
+
+$B: null;
+$E: null;
 
 @mixin b($block) {
   $B: $namespace + $common-separator + $block !global;
@@ -63,9 +67,9 @@
     }
   }
 }
-
 // special nest rule
 @function hitAllSpecialNestRule($selector) {
-  @return str-index($selector, $modifier-separator) or
-    str-index($selector, $state-prefix);
+  $selector: #{$selector};
+  @return string.index($selector, $modifier-separator) or
+    string.index($selector, $state-prefix);
 }

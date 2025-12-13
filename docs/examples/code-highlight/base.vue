@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ElACodeHighlight } from '@element-ai-vue/components'
+import { ElACodeHighlight } from 'element-ai-vue'
 const content = ref(`/**
  * 生成指定区间 [min, max] 的随机整数（包含 min 和 max）
  * @param {number} min - 最小值（整数）
