@@ -50,7 +50,7 @@ export const zhSidebar: DefaultTheme.Sidebar = [
     text: '文件组件',
     items: [
       { text: 'FilesUpload 文件上传', link: '/zh/base/files-upload' },
-      { text: 'Drag 拖拽上传', link: '/zh/base/drag' },
+      { text: 'DragUpload 拖拽上传', link: '/zh/base/drag' },
       { text: 'FilesCard 文件卡片', link: '/zh/base/files-card' },
     ],
   },

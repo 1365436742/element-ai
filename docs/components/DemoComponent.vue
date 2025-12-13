@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, onUnmounted, ref } from 'vue'
-import { ElMarkdown } from '@element-ai/components'
+import { ElAMarkdown } from '@element-ai/components'
 
 const content = ref(`# 一级标题
 ## 二级标题
@@ -32,7 +32,7 @@ const content = ref(`# 一级标题
 
 <template>
   <div class="demo-component">
-    <ElMarkdown :content="content"></ElMarkdown>
+    <ElAMarkdown :content="content"></ElAMarkdown>
   </div>
 </template>
 

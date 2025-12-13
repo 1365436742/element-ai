@@ -39,6 +39,9 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: 'ElAMarkdown',
+})
 import {
   processMarkdownToParts,
   MarkdownPart,

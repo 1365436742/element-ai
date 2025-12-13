@@ -3,6 +3,9 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  name: 'ElACodeHighlight',
+})
 import { commonLangs } from '@element-ai/constants'
 import { getHighlighter, HighlighterType } from '@element-ai/utils'
 import { onMounted, ref, watch } from 'vue'
