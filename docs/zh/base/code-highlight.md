@@ -15,10 +15,7 @@ CodeHighlight 是一个基于 [Shiki](https://shiki.tmrs.site/) 的代码高亮�
 
 ```vue
 <template>
-  <ElACodeHighlight
-    language="javascript"
-    :content="content"
-  ></ElACodeHighlight>
+  <ElACodeHighlight language="javascript" :content="content"></ElACodeHighlight>
 </template>
 
 <script setup lang="ts">
