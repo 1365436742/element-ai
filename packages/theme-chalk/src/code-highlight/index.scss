@@ -7,6 +7,7 @@
   --#{$namespace}-header-bg-color: rgba(0, 0, 0, 0.06);
   --#{$namespace}-content-bg-color: rgb(250, 250, 250);
   --#{$namespace}-color-border-secondary: #f0f0f0;
+  --#{$namespace}-copy-bg-color: rgba(0, 0, 0, 0.1);
 
   position: relative;
   border-radius: 6px;
@@ -35,15 +36,21 @@
     align-items: center;
     padding: 0 14px;
     cursor: pointer;
-    color: var(--el-text-color-secondary);
-    transition: color var(--el-transition-duration);
 
-    &:hover {
-      color: var(--el-color-primary);
-    }
-
-    .element-ai-vue-iconfont {
-      font-size: 14px;
+    @include e(icon) {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      &:hover {
+        background-color: var(--#{$namespace}-copy-bg-color);
+      }
+      .element-ai-vue-iconfont {
+        font-size: 14px;
+      }
     }
   }
 

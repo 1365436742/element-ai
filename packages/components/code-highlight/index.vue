@@ -5,7 +5,9 @@
         <div :class="ns.e('language')">{{ language }}</div>
       </div>
       <div :class="ns.e('action')">
-        <span class="element-ai-vue-iconfont icon-fuzhi"></span>
+        <div :class="ns.e('icon')">
+          <span class="element-ai-vue-iconfont icon-fuzhi"></span>
+        </div>
       </div>
     </slot>
     <div :class="ns.e('content')" v-html="htmlContent"></div>
@@ -45,13 +47,13 @@ onMounted(async () => {
 })
 
 watch(
-  [() => props.content, () => highlighter.value],
+  [() => props.content, () => highlighter.value, () => props.theme],
   async () => {
     if (!highlighter.value) return
     const hasLang = commonLangs.includes(props.language || '')
     const html = await highlighter.value.codeToHtml(props.content, {
       lang: hasLang ? props.language : 'plaintext',
-      theme: 'github-light',
+      theme: props.theme || 'github-light',
     })
     htmlContent.value = html
   },

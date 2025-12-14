@@ -1,10 +1,18 @@
 <template>
-  <ElACodeHighlight language="javascript" :content></ElACodeHighlight>
+  <ElACodeHighlight
+    language="javascript"
+    :content="content"
+    :theme="isDark ? 'github-dark' : 'github-light'"
+  ></ElACodeHighlight>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { ElACodeHighlight } from 'element-ai-vue'
+
+import { useData } from 'vitepress'
+const { isDark } = useData()
+
 const content = ref(`/**
  * 生成指定区间 [min, max] 的随机整数（包含 min 和 max）
  * @param {number} min - 最小值（整数）
