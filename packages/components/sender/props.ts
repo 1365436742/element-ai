@@ -1,3 +1,4 @@
+import { Extensions } from '@tiptap/vue-3'
 import { ExtractPropTypes, PropType } from 'vue'
 
 export const senderProps = {
@@ -8,6 +9,10 @@ export const senderProps = {
   disabled: {
     type: Boolean,
     default: false,
+  },
+  extensions: {
+    type: Array as PropType<Extensions>,
+    default: () => [],
   },
 }
 

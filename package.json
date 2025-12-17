@@ -81,6 +81,7 @@
     "node": ">= 20"
   },
   "dependencies": {
+    "@tiptap/core": "^3.13.0",
     "@tiptap/extension-document": "^3.13.0",
     "@tiptap/extension-hard-break": "^3.13.0",
     "@tiptap/extension-history": "^3.13.0",

@@ -40,6 +40,7 @@ const editor = useEditor({
       includeChildren: true,
       showOnlyCurrent: false,
     }),
+    ...props.extensions,
   ],
 })
 
