@@ -1,42 +1,18 @@
 <template>
-  <div ref="box"></div>
+  <ShadowBox>
+    <ElAMarkdown
+      :content="content"
+      :theme="isDark ? 'dark' : 'light'"
+    ></ElAMarkdown>
+  </ShadowBox>
 </template>
 <script setup lang="ts">
-import { h, onMounted, ref, render, useTemplateRef, watch } from 'vue'
+import ShadowBox from '../shadow-box.vue'
+import { ref } from 'vue'
 import { ElAMarkdown } from '@element-ai-vue/components'
-// @ts-ignore
-import themeChalk from '@element-ai-vue/theme-chalk/src/index.scss?inline'
-
-const shadowHost = useTemplateRef('box')
 
 import { useData } from 'vitepress'
 const { isDark } = useData()
-
-const renderDom = () => {
-  if (!shadowHost.value) return
-
-  let shadowRoot = shadowHost.value.shadowRoot
-  if (!shadowRoot) {
-    shadowRoot = shadowHost.value.attachShadow({ mode: 'open' })
-    const style = document.createElement('style')
-    style.textContent = themeChalk
-    shadowRoot.appendChild(style)
-  }
-
-  const vnode = h(ElAMarkdown, {
-    content: content.value,
-    theme: isDark.value ? 'dark' : 'light',
-  })
-  render(vnode, shadowRoot)
-}
-
-onMounted(() => {
-  renderDom()
-})
-
-watch(isDark, () => {
-  renderDom()
-})
 
 const content = ref(`
 # 一级标题

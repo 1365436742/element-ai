@@ -3,3 +3,7 @@
 Sender 输入框组件。
 
 [tiptap](https://tiptap.dev/)
+
+:::demo SenderBase
+
+:::

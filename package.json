@@ -81,6 +81,15 @@
     "node": ">= 20"
   },
   "dependencies": {
+    "@tiptap/extension-document": "^3.13.0",
+    "@tiptap/extension-hard-break": "^3.13.0",
+    "@tiptap/extension-history": "^3.13.0",
+    "@tiptap/extension-paragraph": "^3.13.0",
+    "@tiptap/extension-placeholder": "^3.13.0",
+    "@tiptap/extension-text": "^3.13.0",
+    "@tiptap/pm": "^3.13.0",
+    "@tiptap/starter-kit": "^3.13.0",
+    "@tiptap/vue-3": "^3.13.0",
     "copy-to-clipboard": "^3.3.3",
     "dompurify": "^3.3.0",
     "json5": "^2.2.3",
