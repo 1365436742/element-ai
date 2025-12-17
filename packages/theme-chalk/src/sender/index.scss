@@ -1,3 +1,7 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/config' as *;
+@use '../common/var' as *;
+
 .tiptap {
   p {
     margin: 0;
@@ -23,4 +27,50 @@
     height: 0;
     pointer-events: none;
   } */
+}
+
+@include b(input-tag-prefix) {
+  float: left;
+  position: relative;
+  z-index: 2;
+  @include e(wrapper) {
+    display: inline-block;
+    padding: 0 6px;
+    margin: 0 2px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    color: var(--#{$namespace}-primary-default-color);
+    box-sizing: content-box;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--#{$namespace}-input-tag-prefix-bg-color);
+      .#{$B}__content--remove {
+        opacity: 1;
+        pointer-events: unset;
+      }
+    }
+    @include e(content) {
+      white-space: nowrap;
+      user-select: none;
+
+      @include m(remove) {
+        color: var(--#{$namespace}-close-icon-color);
+        cursor: pointer;
+        font-size: 16px;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        right: -4px;
+        top: -6px;
+        line-height: 1;
+        transition-duration: 0.15s;
+        transition-property: opacity;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
 }

@@ -14,6 +14,10 @@ export const senderProps = {
     type: Array as PropType<Extensions>,
     default: () => [],
   },
+  iputTagPrefixValue: {
+    type: String,
+    default: '',
+  },
 }
 
 export type SenderPropsType = PropType<

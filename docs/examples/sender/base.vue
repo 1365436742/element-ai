@@ -1,6 +1,11 @@
 <template>
   <ShadowBox>
-    <ElASender v-model="content" :placeholder="placeholder"></ElASender>
+    <ElASender
+      v-model="content"
+      v-model:show-input-tag-prefix="showInputTagPrefix"
+      iputTagPrefixValue="技能：翻译"
+      :placeholder="placeholder"
+    ></ElASender>
   </ShadowBox>
 </template>
 
@@ -9,9 +14,11 @@ import { ElASender } from 'element-ai-vue'
 import { ref } from 'vue'
 import ShadowBox from '../shadow-box.vue'
 
-const content = ref(`<p>ss</p><p>ss</p>`)
+const content = ref(`<p>ss</p>`)
 
-const placeholder = ref(`# 欢迎使用 Sender 组件！`)
+const placeholder = ref(`# Sender 组件！`)
+
+const showInputTagPrefix = ref(true)
 </script>
 
 <style scoped></style>

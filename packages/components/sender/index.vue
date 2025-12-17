@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!-- <Skill
-      v-if="showSkill && skillValue"
-      :value="skillValue"
-      @remove-skill="handleRemoveSkill"
-    ></Skill> -->
+    <InputTagPrefix
+      v-if="showInputTagPrefix && iputTagPrefixValue"
+      :value="iputTagPrefixValue"
+      @remove="closeInputTagPrefix"
+    ></InputTagPrefix>
     <editor-content :editor="editor" />
   </div>
 </template>
@@ -21,6 +21,7 @@ import Text from '@tiptap/extension-text'
 import HardBreak from '@tiptap/extension-hard-break'
 import History from '@tiptap/extension-history'
 import Placeholder from '@tiptap/extension-placeholder'
+import InputTagPrefix from './input-tag-prefix.vue'
 import { senderProps } from './props'
 
 const props = defineProps({
@@ -30,6 +31,11 @@ const props = defineProps({
 const content = defineModel({
   type: String,
   default: '',
+})
+
+const showInputTagPrefix = defineModel('showInputTagPrefix', {
+  default: false,
+  type: Boolean,
 })
 
 const editor = useEditor({
@@ -50,6 +56,10 @@ const editor = useEditor({
     ...props.extensions,
   ],
 })
+
+const closeInputTagPrefix = () => {
+  showInputTagPrefix.value = false
+}
 
 watch(
   () => props.disabled,
