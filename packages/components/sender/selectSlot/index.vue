@@ -1,22 +1,22 @@
 <!-- <template>
   <NodeViewWrapper class="select-slot">
-    <mtd-dropdown>
+    <dropdown>
       <div class="select-wap">
         <span style="margin-inline-end: 4px">{{ lable }}</span>
         <i class="mtdicon mtdicon-down-thick" />
       </div>
       <template #dropdown>
-        <mtd-dropdown-menu>
-          <mtd-dropdown-menu-item
+        <dropdown-menu>
+          <dropdown-menu-item
             v-for="option in options"
             :key="option.value"
             @click="handleChange(option.value)"
           >
             {{ option.label }}
-          </mtd-dropdown-menu-item>
-        </mtd-dropdown-menu>
+          </dropdown-menu-item>
+        </dropdown-menu>
       </template>
-    </mtd-dropdown>
+    </dropdown>
   </NodeViewWrapper>
 </template>
 
