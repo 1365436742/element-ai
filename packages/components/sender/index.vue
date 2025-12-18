@@ -27,6 +27,10 @@ import HardBreak from '@tiptap/extension-hard-break'
 import History from '@tiptap/extension-history'
 import Placeholder from '@tiptap/extension-placeholder'
 import { EditorView } from '@tiptap/pm/view'
+import {
+  handleSenderPasteLogic,
+  getParseFile,
+} from '@element-ai-vue/utils/sender'
 import InputTagPrefix from './input-tag-prefix.vue'
 import { senderProps } from './props'
 
@@ -34,7 +38,15 @@ const props = defineProps({
   ...senderProps,
 })
 
-const emits = defineEmits(['update:value', 'update:showInputTagPrefix'])
+const emits = defineEmits<{
+  (e: 'update:value', value: string): void
+  (e: 'update:showInputTagPrefix', value: boolean): void
+  (e: 'enterPressed'): void
+  (e: 'paste', event: ClipboardEvent): void
+  (e: 'pasteFile', files: File[]): void
+  (e: 'blur'): void
+  (e: 'focus'): void
+}>()
 
 const placeholderHeight = ref('')
 const opacity = ref(0)
@@ -50,14 +62,11 @@ const handleKeyDown = (view: EditorView, event: KeyboardEvent) => {
   if (props.onHandleKeyDown) {
     return props.onHandleKeyDown(view, event)
   }
-  // // 如果是回车键
-  if (event.key === 'Enter') {
-    // 如果按下了 Shift 键，允许换行
+  if (event.key === 'Enter' && !props.enterBreak) {
     if (event.shiftKey) {
-      return false // 让默认行为处理（换行）
+      return false
     }
-    // emits('enterPressed')
-    // 单独按回车键，阻止换行
+    emits('enterPressed')
     event.preventDefault()
     return true
   }
@@ -81,14 +90,24 @@ const editor = useEditor({
   ],
   editorProps: {
     handleKeyDown,
+    handlePaste: handleSenderPasteLogic,
   },
   onCreate() {
     if (editor.value?.isEmpty) {
       placeholderHeight.value = getPlaceholderHeight()
     }
-    // editor.value?.commands.setContent(props.modelValue || '')
+    editor.value?.commands.setContent(props.modelValue || '')
     opacity.value = 1
   },
+  onPaste: (e) => {
+    emits('paste', e)
+    const files = getParseFile(e)
+    if (files?.length) {
+      emits('pasteFile', files)
+    }
+  },
+  onBlur: () => emits('blur'),
+  onFocus: () => emits('focus'),
 })
 
 const getPlaceholderHeight = () => {

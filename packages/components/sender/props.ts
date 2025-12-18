@@ -19,6 +19,10 @@ export const senderProps = {
     type: String,
     default: '',
   },
+  enterBreak: {
+    type: Boolean,
+    default: false,
+  },
   modelValue: {
     type: String,
     default: '',
