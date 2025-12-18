@@ -16,7 +16,9 @@ import ShadowBox from '../shadow-box.vue'
 
 const content = ref(`<p>ss</p>`)
 
-const placeholder = ref(`# Sender 组件！`)
+const placeholder = ref(
+  `# Sender 组件# Sender 组件# Sender 组件# Sender 组件# Sender 组件# Sender 组件！`
+)
 
 const showInputTagPrefix = ref(true)
 </script>

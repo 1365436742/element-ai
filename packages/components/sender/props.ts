@@ -1,4 +1,5 @@
 import { Extensions } from '@tiptap/vue-3'
+import { EditorView } from '@tiptap/pm/view'
 import { ExtractPropTypes, PropType } from 'vue'
 
 export const senderProps = {
@@ -18,13 +19,18 @@ export const senderProps = {
     type: String,
     default: '',
   },
-  value: {
+  modelValue: {
     type: String,
     default: '',
   },
   showInputTagPrefix: {
     type: Boolean,
     default: false,
+  },
+  onHandleKeyDown: {
+    type: Function as PropType<
+      (view: EditorView, event: KeyboardEvent) => void
+    >,
   },
 }
 

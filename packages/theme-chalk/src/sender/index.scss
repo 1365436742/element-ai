@@ -10,23 +10,15 @@
   &.ProseMirror-focused {
     outline: none;
   }
-  /* Placeholder (at the top) */
-  p.is-editor-empty:first-child::before {
-    color: #adb5bd;
-    content: attr(data-placeholder);
-    float: left;
-    height: 0;
-    pointer-events: none;
-  }
 
-  /* Placeholder (on every new line) */
-  /* .is-empty::before {
-    color: var(--gray-4);
+  p.is-editor-empty:first-child::before {
     content: attr(data-placeholder);
-    float: left;
-    height: 0;
+    position: absolute;
+    color: #adb5bd;
     pointer-events: none;
-  } */
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 @include b(input-tag-prefix) {
