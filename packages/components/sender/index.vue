@@ -39,7 +39,7 @@ const props = defineProps({
 })
 
 const emits = defineEmits<{
-  (e: 'update:value', value: string): void
+  (e: 'update:modelValue', value: string): void
   (e: 'update:showInputTagPrefix', value: boolean): void
   (e: 'enterPressed'): void
   (e: 'paste', event: ClipboardEvent): void
@@ -91,6 +91,9 @@ const editor = useEditor({
   editorProps: {
     handleKeyDown,
     handlePaste: handleSenderPasteLogic,
+  },
+  onUpdate: () => {
+    emits('update:modelValue', editor.value?.getHTML() || '')
   },
   onCreate() {
     if (editor.value?.isEmpty) {
