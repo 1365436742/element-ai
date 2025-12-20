@@ -21,7 +21,7 @@
 defineOptions({
   name: 'ElABaseInput',
 })
-import { watch, ref, onBeforeUnmount } from 'vue'
+import { watch, ref } from 'vue'
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import Document from '@tiptap/extension-document'
 import Paragraph from '@tiptap/extension-paragraph'

@@ -11,73 +11,38 @@
     line-height: 1.6;
     min-width: 150px;
     word-wrap: break-word;
-    background-color: var(--el-ai-popover-bg-color);
-    color: var(--el-ai-popover-text-color);
-    border: 1px solid var(--el-ai-popover-border-color);
     border-radius: var(--#{$namespace}-border-radius-base, 6px);
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
-
-    &:not(.is-dark) {
-      --el-ai-popover-bg-color: #fff;
-      --el-ai-popover-text-color: #303133;
-      --el-ai-popover-border-color: #e4e7ed;
-      --el-ai-popover-title-color: #303133;
-    }
-
-    &.is-dark {
-      --el-ai-popover-bg-color: #303133;
-      --el-ai-popover-text-color: #fff;
-      --el-ai-popover-border-color: #303133;
-      --el-ai-popover-title-color: #fff;
-    }
-  }
-
-  @include e(inner) {
-    padding: 8px;
-  }
-
-  @include e(title) {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--el-ai-popover-title-color);
-    margin-bottom: 8px;
-
-    &:empty {
-      display: none;
-    }
-  }
-
-  @include e(content) {
-    color: var(--el-ai-popover-text-color);
+    box-shadow: var(--#{$namespace}-box-shadow-light);
+    background-color: var(--#{$namespace}-border-color-light);
   }
 
   @include e(arrow) {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: var(--el-ai-popover-bg-color);
     transform: rotate(45deg);
     z-index: -1;
+    background-color: var(--#{$namespace}-border-color-light);
 
     // 根据位置隐藏箭头边框
     &[data-side='top'] {
-      border-right: 1px solid var(--el-ai-popover-border-color);
-      border-bottom: 1px solid var(--el-ai-popover-border-color);
+      border-right: 1px solid var(--#{$namespace}-bg-color-overlay);
+      border-bottom: 1px solid var(--#{$namespace}-bg-color-overlay);
     }
 
     &[data-side='bottom'] {
-      border-left: 1px solid var(--el-ai-popover-border-color);
-      border-top: 1px solid var(--el-ai-popover-border-color);
+      border-left: 1px solid var(--#{$namespace}-bg-color-overlay);
+      border-top: 1px solid var(--#{$namespace}-bg-color-overlay);
     }
 
     &[data-side='left'] {
-      border-right: 1px solid var(--el-ai-popover-border-color);
-      border-top: 1px solid var(--el-ai-popover-border-color);
+      border-right: 1px solid var(--#{$namespace}-bg-color-overlay);
+      border-top: 1px solid var(--#{$namespace}-bg-color-overlay);
     }
 
     &[data-side='right'] {
-      border-left: 1px solid var(--el-ai-popover-border-color);
-      border-bottom: 1px solid var(--el-ai-popover-border-color);
+      border-left: 1px solid var(--#{$namespace}-bg-color-overlay);
+      border-bottom: 1px solid var(--#{$namespace}-bg-color-overlay);
     }
   }
 }

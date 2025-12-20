@@ -6,13 +6,6 @@ export type PopoverEffect = 'dark' | 'light'
 
 export const popoverProps = {
   /**
-   * @description popover title
-   */
-  title: {
-    type: String,
-    default: '',
-  },
-  /**
    * @description popover content
    */
   content: {

@@ -10,6 +10,22 @@ html.dark {
   }
 }
 
+@include b(tooltip) {
+  @include e(popper) {
+    &.is-dark {
+      @include dark-style;
+    }
+  }
+}
+
+@include b(popover) {
+  @include e(popper) {
+    &.is-dark {
+      @include dark-style;
+    }
+  }
+}
+
 @include b(code-highlight) {
   &.#{$namespace}-code-highlight--dark {
     @include dark-style;
@@ -26,21 +42,8 @@ html.dark {
   }
 }
 
-@include b(tooltip) {
-  .#{$namespace}-tooltip__popper {
-    &:not(.is-dark) {
-      @include dark-style;
-    }
-  }
-}
-
-@include b(popover) {
-  .#{$namespace}-popover__popper {
-    &:not(.is-dark) {
-      --el-ai-popover-bg-color: #1d1e1f;
-      --el-ai-popover-text-color: #e5eaf3;
-      --el-ai-popover-border-color: #3d3d3d;
-      --el-ai-popover-title-color: #e5eaf3;
-    }
+@include b(sender) {
+  &.#{$namespace}-sender--dark {
+    @include dark-style;
   }
 }

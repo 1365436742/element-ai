@@ -1,6 +1,6 @@
 <template>
   <NodeViewWrapper :class="ns.b()">
-    <Popover v-model:visible="visible">
+    <Popover v-model:visible="visible" :effect="theme">
       <div :class="ns.e('select-wap')">
         <span style="margin-inline-end: 4px">{{ lable }}</span>
         <span
@@ -13,6 +13,7 @@
           v-if="selectSlotContent"
           :is="selectSlotContent"
           :options="options"
+          :theme="theme"
         />
         <div v-else :class="ns.e('options-wap')">
           <div
@@ -25,6 +26,11 @@
             @click="handleChange(option.value)"
           >
             {{ option.label }}
+            <span
+              v-if="option.value === selectValue"
+              class="element-ai-vue-iconfont icon-duihao1"
+              :class="ns.em('options-wap', 'icon')"
+            ></span>
           </div>
         </div>
       </template>
@@ -47,6 +53,7 @@ const visible = ref(false)
 
 // 注入透传的 slot
 const selectSlotContent = inject(SELECT_SLOT_CONTENT_INJECTION_KEY, null)
+const theme = inject('theme', 'light')
 
 const ns = useNamespace('select-slot')
 const options = computed<SenderSelectOption[]>(() => {

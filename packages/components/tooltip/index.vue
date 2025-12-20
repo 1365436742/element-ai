@@ -16,7 +16,12 @@
         <div :class="ns.e('content')">
           <slot name="content">{{ content }}</slot>
         </div>
-        <div ref="arrowRef" :class="ns.e('arrow')" :style="arrowStyles"></div>
+        <div
+          ref="arrowRef"
+          :class="ns.e('arrow')"
+          :style="arrowStyles"
+          :data-side="arrowSide"
+        ></div>
       </div>
     </Transition>
   </Teleport>
@@ -80,6 +85,10 @@ const {
     shift({ padding: 5 }),
     arrow({ element: arrowRef }),
   ]),
+})
+
+const arrowSide = computed(() => {
+  return actualPlacement.value.split('-')[0]
 })
 
 // Arrow styles

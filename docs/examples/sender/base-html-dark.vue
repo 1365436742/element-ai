@@ -18,20 +18,22 @@
       select-slot
     </button>
   </div>
-
-  <div class="wapper" :class="{ 'focus-class': focusClass }">
-    <ShadowBox>
-      <ElASender
-        v-model="content"
-        v-model:show-input-tag-prefix="showInputTagPrefix"
-        inputTagPrefixValue="技能：翻译"
-        :placeholder
-        :variant
-        @focus="focusClass = true"
-        @blur="focusClass = false"
-      >
-      </ElASender>
-    </ShadowBox>
+  <div class="box">
+    <div class="wapper" :class="{ 'focus-class': focusClass }">
+      <ShadowBox>
+        <ElASender
+          v-model="content"
+          v-model:show-input-tag-prefix="showInputTagPrefix"
+          theme="dark"
+          inputTagPrefixValue="技能：翻译"
+          :placeholder
+          :variant
+          @focus="focusClass = true"
+          @blur="focusClass = false"
+        >
+        </ElASender>
+      </ShadowBox>
+    </div>
   </div>
 </template>
 
@@ -65,24 +67,18 @@ const changeContent = (key: string) => {
 </script>
 
 <style scoped lang="scss">
-html.dark {
+.box {
+  background-color: #000;
+  padding: 20px;
   .wapper {
-    border-color: rgba(121, 121, 121, 0.6);
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid rgba(121, 121, 121, 0.6);
 
     &.focus-class {
       border-color: rgba($color: #fff, $alpha: 0.6);
     }
-  }
-}
-
-.wapper {
-  width: 100%;
-  border-radius: 8px;
-  padding: 8px;
-  border: 1px solid rgba(17, 25, 37, 0.15);
-
-  &.focus-class {
-    border-color: rgba(17, 25, 37, 0.45);
   }
 }
 </style>

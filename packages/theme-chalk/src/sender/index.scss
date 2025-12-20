@@ -111,7 +111,7 @@
       cursor: not-allowed;
     }
     & > span {
-      color: var(--#{$namespace}-base-color);
+      color: #fff;
     }
   }
 
@@ -188,14 +188,24 @@
   }
 
   @include e(options-wap) {
+    padding: 8px;
     border-radius: var(--#{$namespace}-border-radius-btn);
     max-height: 200px;
     overflow-y: auto;
+
+    @include m(icon) {
+      font-size: 10px;
+      margin-left: 4px;
+    }
+
     @include m(option-item) {
       box-sizing: border-box;
       padding: 4px 8px;
       border-radius: var(--#{$namespace}-border-radius-btn);
       cursor: pointer;
+      &.is-active {
+        color: var(--#{$namespace}-primary-default-color);
+      }
       &:hover {
         background-color: var(--#{$namespace}-copy-bg-color);
       }

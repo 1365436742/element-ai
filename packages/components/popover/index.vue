@@ -20,9 +20,6 @@
         @mouseleave="onPopperMouseLeave"
       >
         <div :class="ns.e('inner')">
-          <div v-if="title || $slots.title" :class="ns.e('title')">
-            <slot name="title">{{ title }}</slot>
-          </div>
           <div :class="ns.e('content')">
             <slot name="content">{{ content }}</slot>
           </div>

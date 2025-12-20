@@ -3,6 +3,10 @@ import type { EditorView } from 'prosemirror-view'
 import { ExtractPropTypes, PropType } from 'vue'
 
 export const baseInputProps = {
+  theme: {
+    type: String as PropType<'light' | 'dark'>,
+    default: 'light',
+  },
   placeholder: {
     type: String,
     default: '',

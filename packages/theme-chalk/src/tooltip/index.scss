@@ -17,18 +17,6 @@
     border: 1px solid var(--el-ai-tooltip-border-color);
     border-radius: var(--#{$namespace}-border-radius-base, 4px);
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-
-    &.is-dark {
-      --el-ai-tooltip-bg-color: #303133;
-      --el-ai-tooltip-text-color: #fff;
-      --el-ai-tooltip-border-color: #303133;
-    }
-
-    &:not(.is-dark) {
-      --el-ai-tooltip-bg-color: #fff;
-      --el-ai-tooltip-text-color: #303133;
-      --el-ai-tooltip-border-color: #e4e7ed;
-    }
   }
 
   @include e(content) {
@@ -39,10 +27,29 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: var(--el-ai-tooltip-bg-color);
+    background-color: #000;
     border: 1px solid var(--el-ai-tooltip-border-color);
     transform: rotate(45deg);
     z-index: -1;
+    &[data-side='top'] {
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+
+    &[data-side='bottom'] {
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+
+    &[data-side='left'] {
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+    }
+
+    &[data-side='right'] {
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
   }
 }
 

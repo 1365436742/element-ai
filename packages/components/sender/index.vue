@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ns.b(), ns.b(variant)]">
+  <div :class="[ns.b(), ns.b(variant), theme === 'dark' ? ns.m('dark') : '']">
     <slot v-if="variant === 'default'" name="prefix"></slot>
     <div :class="ns.e('content')">
       <BaseInput
@@ -63,6 +63,7 @@ const props = defineProps({
 const slots = defineSlots<SenderSlotsType>()
 
 provide(SELECT_SLOT_CONTENT_INJECTION_KEY, slots['select-slot-content'])
+provide('theme', props.theme)
 
 const emits = defineEmits<BaseInputEmitsType & SenderEmitsType>()
 const baseInputRef = useTemplateRef('baseInputRef')
@@ -79,6 +80,8 @@ const onSend = () => {
   emits('send', baseInputRef.value?.editor?.getText() || '')
 }
 defineExpose({
-  ...baseInputRef.value,
+  editor: () => baseInputRef.value?.editor,
+  focus: () => baseInputRef.value?.editor?.commands?.focus(),
+  blur: () => baseInputRef.value?.editor?.commands?.blur(),
 })
 </script>
