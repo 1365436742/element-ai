@@ -5,7 +5,7 @@
 @include b(code-highlight) {
   position: relative;
   border-radius: var(--#{$namespace}-border-radius-base);
-  border: 1px solid var(--el-border-color-light);
+  border: 1px solid var(--#{$namespace}-border-color-light);
   overflow: hidden;
   display: flex;
   flex-direction: column;

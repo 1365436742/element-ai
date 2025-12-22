@@ -18,9 +18,12 @@
   --#{$namespace}-send-btn-bg-color: rgba(255, 255, 255, 0.4);
   --#{$namespace}-drag--upload-mark-bg-color: rgba(96, 96, 96, 0.9);
 
-  --el-ai-tooltip-bg-color: #303133;
-  --el-ai-tooltip-text-color: #fff;
-  --el-ai-tooltip-border-color: #303133;
+  --#{$namespace}-tooltip-bg-color: #303133;
+  --#{$namespace}-tooltip-text-color: #fff;
+  --#{$namespace}-tooltip-border-color: #303133;
+
+  --#{$namespace}-file-card-border-color: rgba(200, 202, 205, 0.2);
+  --#{$namespace}-file-card-bar-outer-bg-color: rgb(143, 143, 143);
   color: #fff;
   background-color: #000;
 }
@@ -48,6 +51,9 @@
   --#{$namespace}-tooltip-bg-color: #1d1e1f;
   --#{$namespace}-tooltip-text-color: #e5eaf3;
   --#{$namespace}-tooltip-border-color: #3d3d3d;
+
+  --#{$namespace}-file-card-border-color: rgba(17, 25, 37, 0.2);
+  --#{$namespace}-file-card-bar-outer-bg-color: #e5e5e5;
 }
 
 @mixin dark-markdown {

@@ -15,7 +15,6 @@
           :cy="50"
           :r="radius"
           fill="none"
-          :stroke="trackColor"
           :stroke-width="relativeStrokeWidth"
         />
         <!-- 进度圆环 -->
@@ -45,7 +44,6 @@
         <div
           :class="ns.e('bar-outer')"
           :style="{
-            backgroundColor: trackColor,
             borderRadius: `${strokeWidth / 2}px`,
           }"
         >
@@ -86,8 +84,6 @@ export interface ProgressProps {
   strokeWidth?: number
   /** 圆形进度条的宽度 */
   width?: number
-  /** 轨道颜色 */
-  trackColor?: string
 }
 
 const props = withDefaults(defineProps<ProgressProps>(), {
@@ -98,7 +94,6 @@ const props = withDefaults(defineProps<ProgressProps>(), {
   status: 'normal',
   strokeWidth: 6,
   width: 120,
-  trackColor: '#e5e5e5',
 })
 
 const ns = useNamespace('progress')

@@ -1,7 +1,5 @@
 <template>
-  <div class="btns">
-    <ElAFilesCard v-model="fileList"> </ElAFilesCard>
-  </div>
+  <ElAFilesCard v-model="fileList"> </ElAFilesCard>
 </template>
 
 <script setup lang="ts">
@@ -77,16 +75,3 @@ const fileList = ref<FilesUploadItem[]>([
   },
 ])
 </script>
-
-<style>
-.texts {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.btns {
-  display: flex;
-  gap: 20px;
-}
-</style>

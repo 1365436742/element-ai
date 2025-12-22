@@ -27,7 +27,7 @@
     position: relative;
     width: 61px;
     height: 61px;
-    border: 0.5px solid rgba(17, 25, 37, 0.1);
+    border: 1px solid var(--#{$namespace}-file-card-border-color);
     cursor: pointer;
     border-radius: 4px;
     @include m(img) {
@@ -69,6 +69,7 @@
       color: red;
       font-weight: bold;
       font-size: 15px;
+      white-space: nowrap;
     }
   }
 
@@ -80,7 +81,7 @@
     height: auto;
     min-height: 100%;
     padding: 10px 8px;
-    border: 0.5px solid rgba(17, 25, 37, 0.45);
+    border: 1px solid var(--#{$namespace}-file-card-border-color);
     border-radius: 8px;
     @include m(name) {
       display: flex;
@@ -99,6 +100,7 @@
     @include m(icon) {
       display: block;
       font-size: 26px;
+      max-width: 30px;
       &.icon-ppt {
         color: red;
       }
@@ -168,6 +170,7 @@
 
     @include e(track) {
       opacity: 0.3;
+      stroke: var(--#{$namespace}-close-icon-color);
     }
 
     @include e(path) {
@@ -207,7 +210,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #e5e5e5;
+      background-color: var(--#{$namespace}-file-card-bar-outer-bg-color);
     }
 
     @include e(bar-inner) {

@@ -50,6 +50,18 @@ FilesUpload 是一个功能完善的文件上传组件，支持多文件选择�
 
 ## 类型定义
 
+::: tip 可以直接导入
+
+```typescript
+import {
+  FilesUploadItem,
+  FilesUploadErrorParams,
+  FilesUploadErrorType,
+} from 'element-ai-vue'
+```
+
+:::
+
 ### FilesUploadItem
 
 ```typescript

@@ -51,6 +51,18 @@ DragUpload 拖拽上传组件,他的入参和FilesUpload一样，他们可以搭
 
 ## 类型定义
 
+::: tip 可以直接导入
+
+```typescript
+import {
+  FilesUploadItem,
+  FilesUploadErrorParams,
+  FilesUploadErrorType,
+} from 'element-ai-vue'
+```
+
+:::
+
 ### FilesUploadItem
 
 ```typescript
