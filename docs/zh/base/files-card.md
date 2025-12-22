@@ -11,5 +11,3 @@ FilesCard 文件卡片组件。搭配DragUpload、FilesUpload使用，事半功�
 ```
 
 :::
-
-
