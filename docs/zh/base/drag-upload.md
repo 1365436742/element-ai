@@ -26,7 +26,7 @@ DragUpload 拖拽上传组件,他的入参和FilesUpload一样，他们可以搭
 
 | 属性名          | 说明                                              | 类型                | 默认值  |
 | --------------- | ------------------------------------------------- | ------------------- | ------- |
-| v-model         | 文件列表绑定值                                    | `IFileUploadItem[]` | `[]`    |
+| v-model         | 文件列表绑定值                                    | `FilesUploadItem[]` | `[]`    |
 | multiple        | 是否支持多选文件                                  | `boolean`           | `false` |
 | accept          | 接受上传的文件类型，如 `['.jpg', '.png', '.pdf']` | `string[]`          | `[]`    |
 | max-file-length | 最大上传文件数量                                  | `number`            | `10`    |
@@ -38,8 +38,8 @@ DragUpload 拖拽上传组件,他的入参和FilesUpload一样，他们可以搭
 | 事件名            | 说明                                   | 类型                                                   |
 | ----------------- | -------------------------------------- | ------------------------------------------------------ |
 | upload-before     | 上传前的钩子函数，可用于过滤或处理文件 | `(fileList: File[]) => Promise<File[]> \| File[]`      |
-| upload            | 自定义上传函数                         | `(fileUploadItems: IFileUploadItem[]) => Promise<any>` |
-| update:modelValue | 文件列表变化时触发                     | `(fileList: IFileUploadItem[]) => void`                |
+| upload            | 自定义上传函数                         | `(fileUploadItems: FilesUploadItem[]) => Promise<any>` |
+| update:modelValue | 文件列表变化时触发                     | `(fileList: FilesUploadItem[]) => void`                |
 | error-message     | 上传出错时触发                         | `(params: FilesUploadErrorParams) => void`             |
 
 ## Slots
@@ -51,10 +51,10 @@ DragUpload 拖拽上传组件,他的入参和FilesUpload一样，他们可以搭
 
 ## 类型定义
 
-### IFileUploadItem
+### FilesUploadItem
 
 ```typescript
-interface IFileUploadItem {
+interface FilesUploadItem {
   elementFile?: File // 原始 File 对象
   fileSize?: number // 文件大小（字节）
   fileId: string // 文件唯一标识

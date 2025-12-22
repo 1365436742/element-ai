@@ -16,12 +16,12 @@
 </template>
 
 <script setup lang="ts">
-import { ElADragUpload, IFileUploadItem } from 'element-ai-vue'
+import { ElADragUpload, FilesUploadItem } from 'element-ai-vue'
 import { ref } from 'vue'
 
-const fileList = ref<IFileUploadItem[]>([])
+const fileList = ref<FilesUploadItem[]>([])
 
-const onUpload = async (fileUploadItems: IFileUploadItem[]) => {
+const onUpload = async (fileUploadItems: FilesUploadItem[]) => {
   for (let i = 0; i < fileUploadItems.length; i++) {
     const element = fileList.value.find(
       (item) => item.fileId === fileUploadItems[i].fileId

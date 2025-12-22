@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11447563",
+      "name": "ppt3",
+      "font_class": "ppt",
+      "unicode": "e805",
+      "unicode_decimal": 59397
+    },
+    {
+      "icon_id": "18360947",
+      "name": "file",
+      "font_class": "file",
+      "unicode": "e76b",
+      "unicode_decimal": 59243
+    },
+    {
+      "icon_id": "23521847",
+      "name": "doc",
+      "font_class": "doc",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "23521857",
+      "name": "docx",
+      "font_class": "docx",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
       "icon_id": "10933419",
       "name": "终止",
       "font_class": "zhongzhi",

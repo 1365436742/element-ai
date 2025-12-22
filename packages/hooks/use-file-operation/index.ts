@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   FilesUploadErrorParams,
   FilesUploadPropsType,
-  IFileUploadItem,
+  FilesUploadItem,
 } from '@element-ai-vue/components/files-upload/props'
 
 export function getFileExtension(fileName: string) {
@@ -12,7 +12,7 @@ export function getFileExtension(fileName: string) {
 
 export const useFileOperation = (
   props: FilesUploadPropsType,
-  fileList: WritableComputedRef<IFileUploadItem[], IFileUploadItem[]>
+  fileList: WritableComputedRef<FilesUploadItem[], FilesUploadItem[]>
 ) => {
   /**
    * 校验文件格式
@@ -53,12 +53,12 @@ export const useFileOperation = (
       uploadBeforeFiles.length,
       props.maxFileLength - fileList.value.length
     )
-    const curUploadFiles: IFileUploadItem[] = []
+    const curUploadFiles: FilesUploadItem[] = []
     for (let i = 0; i < minLength; i++) {
       const elementFile = uploadBeforeFiles[i]
       const fileId = uuidv4()
       const fileUrl = URL.createObjectURL(elementFile)
-      const fileInfo: IFileUploadItem = {
+      const fileInfo: FilesUploadItem = {
         elementFile,
         fileId,
         fileName: elementFile.name,

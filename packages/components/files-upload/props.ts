@@ -1,6 +1,6 @@
 import { ExtractPropTypes, PropType } from 'vue'
 
-export interface IFileUploadItem {
+export interface FilesUploadItem {
   elementFile?: File
   fileSize?: number
   fileId: string
@@ -21,7 +21,7 @@ export const filesUploadProps = {
     default: () => [],
   },
   modelValue: {
-    type: Array as PropType<IFileUploadItem[]>,
+    type: Array as PropType<FilesUploadItem[]>,
     default: () => [],
   },
   maxFileLength: {
@@ -42,7 +42,7 @@ export const filesUploadProps = {
   },
   onUpload: {
     type: Function as PropType<
-      (fileUploadItems: IFileUploadItem[]) => Promise<any>
+      (fileUploadItems: FilesUploadItem[]) => Promise<any>
     >,
     default: undefined,
   },
@@ -71,7 +71,7 @@ export type FilesUploadErrorParams = {
 }
 
 export type FilesUploadEmitsType = {
-  (e: 'update:modelValue', fileList: IFileUploadItem[]): void
+  (e: 'update:modelValue', fileList: FilesUploadItem[]): void
   (e: 'error-message', params: FilesUploadErrorParams): void
 }
 
