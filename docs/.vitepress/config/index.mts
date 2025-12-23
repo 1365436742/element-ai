@@ -63,6 +63,10 @@ export default defineConfig({
     logo: { src: '/logo.svg', width: 30, height: 30 },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/1365436742/element-ai-vue' },
+      {
+        icon: 'npm',
+        link: 'https://www.npmjs.com/package/element-ai-vue',
+      },
     ],
   },
   head: [

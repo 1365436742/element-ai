@@ -1,18 +1,18 @@
-import { WritableComputedRef } from 'vue'
+import { Ref } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import {
-  FilesUploadErrorParams,
   FilesUploadPropsType,
   FilesUploadItem,
 } from '@element-ai-vue/components/files-upload/props'
+import { defaultFilesUploadProps } from '@element-ai-vue/constants'
 
 export function getFileExtension(fileName: string) {
   return fileName.slice(fileName.lastIndexOf('.') + 1).toLowerCase()
 }
 
 export const useFileOperation = (
-  props: FilesUploadPropsType,
-  fileList: WritableComputedRef<FilesUploadItem[], FilesUploadItem[]>
+  props: Partial<FilesUploadPropsType>,
+  fileList: Ref<FilesUploadItem[]>
 ) => {
   /**
    * 校验文件格式
@@ -33,14 +33,17 @@ export const useFileOperation = (
    * 文件上传
    * @param files 文件列表
    */
-  const handleFileUpload = async (
-    files: File[],
-    onErrorMessage?: (params: FilesUploadErrorParams) => void
-  ) => {
+  const handleFileUpload = async (files: File[]) => {
+    const {
+      maxFileLength = defaultFilesUploadProps.maxFileLength,
+      fileSizeLimit = defaultFilesUploadProps.fileSizeLimit,
+      accept = [],
+    } = props
+
     if (props.disabled) return
     if (!files) return
-    if (fileList.value.length >= props.maxFileLength) {
-      onErrorMessage?.({
+    if (fileList.value.length >= maxFileLength) {
+      props.onErrorMessage?.({
         type: 'EXCEED_MAX_FILE_LENGTH',
         message: `最多只能上传${props.maxFileLength}个文件`,
       })
@@ -51,7 +54,7 @@ export const useFileOperation = (
     // 文件可上传数量
     const minLength = Math.min(
       uploadBeforeFiles.length,
-      props.maxFileLength - fileList.value.length
+      maxFileLength - fileList.value.length
     )
     const curUploadFiles: FilesUploadItem[] = []
     for (let i = 0; i < minLength; i++) {
@@ -72,16 +75,16 @@ export const useFileOperation = (
 
       // 文件格式校验
       if (validateFormat(elementFile)) {
-        onErrorMessage?.({
+        props.onErrorMessage?.({
           type: 'INVALID_FILE_TYPE',
-          message: `格式不正确,请上传${props.accept.join('、')}格式`,
+          message: `格式不正确,请上传${accept.join('、')}格式`,
         })
         return
       }
 
       // 限制文件大小
-      if (fileSize > props.fileSizeLimit) {
-        onErrorMessage?.({
+      if (fileSize > fileSizeLimit) {
+        props.onErrorMessage?.({
           type: 'EXCEED_FILE_SIZE_LIMIT',
           message: `目前仅支持${props.fileSizeLimit}MB以内文件上传`,
         })

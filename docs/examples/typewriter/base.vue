@@ -6,7 +6,7 @@
     <button class="switch-btn" @click="onStop">停止</button>
   </div>
   <div class="btns">
-    <button class="switch-btn" @click="addText">添加随机文字</button>
+    <button class="switch-btn" @click="addRandomText">添加随机文字</button>
   </div>
   <div class="text-value">{{ textValue }}</div>
 </template>
@@ -44,7 +44,7 @@ const onStop = () => {
   getStatus()
 }
 
-const addText = () => {
+const addRandomText = () => {
   const texts = [
     'This is a typewriter effect.',
     'You can pause and stop it.',

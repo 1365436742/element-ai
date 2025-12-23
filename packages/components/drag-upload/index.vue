@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { useFileOperation, useNamespace } from '@element-ai-vue/hooks'
-import { filesUploadProps } from '../files-upload'
+import { FilesUploadEmitsType, filesUploadProps } from '../files-upload'
 import { useDropZone, useVModel } from '@vueuse/core'
 import { useTemplateRef } from 'vue'
 
@@ -25,6 +25,7 @@ defineOptions({
 const props = defineProps({
   ...filesUploadProps,
 })
+const emits = defineEmits<FilesUploadEmitsType>()
 const fileList = useVModel(props, 'modelValue')
 const dropZoneRef = useTemplateRef('dropZoneRef')
 const ns = useNamespace('drag-upload')

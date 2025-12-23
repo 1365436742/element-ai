@@ -94,6 +94,9 @@
     gap: 8px;
     @include m(other) {
       flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
   }
   @include e(send-btn) {

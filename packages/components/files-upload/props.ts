@@ -1,4 +1,5 @@
 import { ExtractPropTypes, PropType } from 'vue'
+import { defaultFilesUploadProps } from '@element-ai-vue/constants'
 
 export interface FilesUploadItem {
   elementFile?: File
@@ -26,11 +27,12 @@ export const filesUploadProps = {
   },
   maxFileLength: {
     type: Number,
-    default: 10,
+    default: defaultFilesUploadProps.maxFileLength,
   },
+  /* 文件大小限制，单位：MB */
   fileSizeLimit: {
     type: Number,
-    default: 5, // 单位mb
+    default: defaultFilesUploadProps.fileSizeLimit,
   },
   disabled: {
     type: Boolean,
@@ -44,6 +46,10 @@ export const filesUploadProps = {
     type: Function as PropType<
       (fileUploadItems: FilesUploadItem[]) => Promise<any>
     >,
+    default: undefined,
+  },
+  onErrorMessage: {
+    type: Function as PropType<(params: FilesUploadErrorParams) => void>,
     default: undefined,
   },
 }
@@ -72,7 +78,6 @@ export type FilesUploadErrorParams = {
 
 export type FilesUploadEmitsType = {
   (e: 'update:modelValue', fileList: FilesUploadItem[]): void
-  (e: 'error-message', params: FilesUploadErrorParams): void
 }
 
 export type FilesUploadPropsType = Readonly<

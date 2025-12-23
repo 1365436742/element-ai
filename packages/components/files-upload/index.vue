@@ -44,9 +44,7 @@ const onUploadFile = () => {
 const onChange = async (e: Event) => {
   const target = e.target as HTMLInputElement
   if (target.files) {
-    await handleFileUpload(target.files as unknown as File[], (e) =>
-      emits('error-message', e)
-    )
+    await handleFileUpload(target.files as unknown as File[])
   }
   const fileInput = inputRef.value
   if (fileInput) {

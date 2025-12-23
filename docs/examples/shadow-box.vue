@@ -12,6 +12,8 @@ import {
 } from 'vue'
 // @ts-ignore
 import themeChalk from '@element-ai-vue/theme-chalk/src/index.scss?inline'
+// @ts-ignore
+import shadowBoxChalk from './shadow-box.scss?inline'
 
 const shadowHost = useTemplateRef('box')
 const slots = useSlots()
@@ -24,7 +26,7 @@ const renderDom = () => {
   if (!shadowRoot) {
     shadowRoot = shadowHost.value.attachShadow({ mode: 'open' })
     const style = document.createElement('style')
-    style.textContent = themeChalk
+    style.textContent = themeChalk + shadowBoxChalk
     shadowRoot.appendChild(style)
   }
 
