@@ -34,6 +34,7 @@ const ns = useNamespace('files-upload')
 const { handleFileUpload } = useFileOperation(props, fileList)
 
 const onUploadFile = () => {
+  if (props.disabled) return
   const fileInput = inputRef.value
   if (fileInput) {
     fileInput.click()

@@ -3,7 +3,7 @@
     <div :class="ns.e('content')">
       <slot></slot>
     </div>
-    <div v-if="isOverDropZone" :class="ns.e('drop-mask')">
+    <div v-if="isOverDropZone && !props.disabled" :class="ns.e('drop-mask')">
       <slot name="mark-content">
         <div :class="ns.e('drop-mask-border')">
           <p :class="ns.e('drop-content-first')">将文档拖拽到此区域上传</p>
