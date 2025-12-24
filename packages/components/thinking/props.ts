@@ -5,6 +5,10 @@ export const thinkingProps = {
     type: Boolean,
     default: false,
   },
+  title: {
+    type: String,
+    default: '',
+  },
 }
 
 export type ThinkingEmitsType = {

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "element-ai-vue-iconfont"; /* Project id 5088023 */
-  src: url('iconfont.woff2?t=1766393627565') format('woff2'),
-       url('iconfont.woff?t=1766393627565') format('woff'),
-       url('iconfont.ttf?t=1766393627565') format('truetype');
+  src: url('iconfont.woff2?t=1766586128436') format('woff2'),
+       url('iconfont.woff?t=1766586128436') format('woff'),
+       url('iconfont.ttf?t=1766586128436') format('truetype');
 }
 
 .element-ai-vue-iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-out-screen:before {
+  content: "\e60b";
 }
 
 .icon-ppt:before {

@@ -7,7 +7,7 @@
   width: 100%;
   border: 1px solid var(--#{$namespace}-thinking-border-color);
   border-radius: 12px;
-  // overflow: hidden;
+  overflow: hidden;
 
   @include e(top) {
     padding: 7px 13px;
@@ -18,10 +18,14 @@
     &.is-expanded {
       width: min-content;
     }
+
     @include m(title) {
       font-size: 14px;
       font-weight: 600;
+      width: 100%;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     @include m(action) {
       width: 28px;
@@ -32,6 +36,11 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--#{$namespace}-copy-bg-color);
+        }
+      }
     }
   }
   @include e(content) {

@@ -1,153 +1,71 @@
 <template>
-  <ElAThoughtChain :list="list">
-    <template #description="{ item }">
-      <div class="description-with-links">
-        <div
-          v-if="item.searchList && item.searchList.length > 0"
-          class="search-links"
-        >
-          <div v-for="(searchItem, idx) in item.searchList" :key="idx">
-            <a
-              :href="searchItem.href"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {{ searchItem.title }}
-            </a>
-          </div>
-        </div>
+  <ElAThinking v-model="expanded">
+    <template #title>
+      <div class="title">
+        <img :src="'/logo.svg'" alt="" />
+        {{ title }}
       </div>
     </template>
-  </ElAThoughtChain>
+    <template #action>
+      <div class="action" @click="expanded = !expanded">
+        {{ expanded ? '收' : '展' }}
+      </div>
+    </template>
+    <ElAMarkdown
+      :content="content"
+      :theme="isDark ? 'dark' : 'light'"
+    ></ElAMarkdown>
+  </ElAThinking>
 </template>
 
 <script setup lang="ts">
-import { ElAThoughtChain, ThoughtChainItem } from 'element-ai-vue'
+import { ElAThinking, ElAMarkdown } from 'element-ai-vue'
 import { useData } from 'vitepress'
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 
 const { isDark } = useData()
+const expanded = ref(false)
+const title = ref('已完成思考，参考 16 篇资料')
+const content = ref(`# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
 
-const setList = () => {
-  list.value = [
-    {
-      key: 1,
-      title: '第一步：理解需求',
-      description: '求，明确目标和功能。',
-      searchList: [
-        {
-          title: '北京地铁线路图 主要景点 地铁站',
-          href: '/',
-        },
-        {
-          title: '北京地铁线路图 主要景点 地铁站',
-          href: '/',
-        },
-        {
-          title: 'visitbeijing.com.cn',
-          href: '/',
-        },
-        {
-          title: 'm.toutiao.com',
-          href: '/',
-        },
-        {
-          title: 'visitbeijing.com.cn',
-          href: '/',
-        },
-        {
-          title: 'm.toutiao.com',
-          href: '/',
-        },
-        {
-          title: 'visitbeijing.com.cn',
-          href: '/',
-        },
-        {
-          title: 'm.toutiao.com',
-          href: '/',
-        },
-      ],
-      icon: `/assets/book-icon${isDark.value ? '-dark' : ''}.png`,
-    },
-    {
-      key: 2,
-      title: '第二步：设计架构',
-      description: '制定系统架构，选择技术栈和工具。',
-      searchList: [
-        {
-          title: '北京公交系统 旅游专线 景点直通车',
-          href: '/',
-        },
-      ],
-      icon: `/assets/book-icon${isDark.value ? '-dark' : ''}.png`,
-    },
-    {
-      key: 6,
-      title: '研究完成',
-      icon: `/assets/search-icon${isDark.value ? '-dark' : ''}.png`,
-    },
-  ]
-}
-const list = ref<ThoughtChainItem[]>([])
+**这是粗体文本**    *这是斜体文本*  
+__这也是粗体文本__   _这也是斜体文本_
 
-watch(
-  isDark,
-  () => {
-    setList()
-  },
-  {
-    immediate: true,
-  }
-)
+***这是粗斜体文本***  ~~这是带删除线的文本~~
+
+- 无序列表项1
+- 无序列表项2
+  - 子列表项2.1
+  - 子列表项2.2
+
+[element-ai-vue](/ "element-ai-vue")`)
 </script>
 
 <style scoped lang="scss">
-.description-with-links {
-  margin-top: 8px;
-  .search-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    a {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 12px;
-      background-color: #f2f3f5;
-      border-radius: 8px;
-      color: #303133;
-      text-decoration: none;
-      font-size: 13px;
-      line-height: 20px;
-      transition: background-color 0.2s;
-      &:hover {
-        background-color: #e6e7eb;
-      }
-      &::before {
-        content: '';
-        width: 14px;
-        height: 14px;
-        margin-right: 4px;
-        background-image: url('/assets/search-icon.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-    }
+.title {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
   }
 }
-html.dark {
-  .description-with-links .search-links {
-    a {
-      background-color: #262626;
-      color: #cfd3dc;
-      &:hover {
-        background-color: #303030;
-      }
-      &::before {
-        background-image: url('/assets/search-icon-dark.png');
-      }
-    }
-  }
+.action {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  border-radius: 6px;
 }
 </style>

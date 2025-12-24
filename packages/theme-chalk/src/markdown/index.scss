@@ -4,7 +4,6 @@
 
 @include b(markdown) {
   padding: 5px 10px;
-  background-color: var(--bgColor-default);
   border-radius: var(--#{$namespace}-border-radius-base);
 
   .#{$namespace}-code-highlight,
