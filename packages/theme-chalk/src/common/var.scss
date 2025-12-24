@@ -24,6 +24,8 @@
 
   --#{$namespace}-file-card-border-color: rgba(200, 202, 205, 0.2);
   --#{$namespace}-file-card-bar-outer-bg-color: rgb(143, 143, 143);
+  --#{$namespace}-thought-chain-bg-color: rgba(255, 255, 255, 0.3);
+  --#{$namespace}-thought-chain-text-color: rgba(255, 255, 255, 0.45);
   color: #fff;
   background-color: #000;
 }
@@ -54,6 +56,9 @@
 
   --#{$namespace}-file-card-border-color: rgba(17, 25, 37, 0.2);
   --#{$namespace}-file-card-bar-outer-bg-color: #e5e5e5;
+
+  --#{$namespace}-thought-chain-bg-color: rgba(0, 0, 0, 0.3);
+  --#{$namespace}-thought-chain-text-color: rgba(0, 0, 0, 0.45);
 }
 
 @mixin dark-markdown {

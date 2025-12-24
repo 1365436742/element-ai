@@ -1,0 +1,48 @@
+@use '../mixins/mixins' as *;
+@use '../mixins/config' as *;
+@use '../common/var' as *;
+
+@include b(thought-chain) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include e(item) {
+    display: flex;
+    gap: 8px;
+    .is-last-item {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  @include e(status) {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    @include m(icon) {
+      width: 14px;
+      height: 14px;
+      line-height: 24px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      background-color: var(--#{$namespace}-thought-chain-bg-color);
+      width: 1px;
+      flex: 1;
+      margin: 6px auto 0;
+    }
+  }
+  @include e(content) {
+    @include m(title) {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+    @include m(description) {
+      padding-top: 8px;
+      font-size: 14px;
+      color: var(--#{$namespace}-thought-chain-text-color);
+    }
+  }
+}
