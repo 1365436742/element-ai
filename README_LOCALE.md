@@ -4,5 +4,7 @@ Oxc、Prettier - Code formatter
 
 # TODO
 
-4. config-provider 主题全局配置
-5. 气泡实现
+1. config-provider 主题全局配置
+2. 思考实现
+3. 对话气泡
+4. 对话列表

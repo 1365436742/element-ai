@@ -59,6 +59,8 @@
 
   --#{$namespace}-thought-chain-bg-color: rgba(0, 0, 0, 0.3);
   --#{$namespace}-thought-chain-text-color: rgba(0, 0, 0, 0.45);
+
+  --#{$namespace}-thinking-border-color: #ebebeb;
 }
 
 @mixin dark-markdown {
