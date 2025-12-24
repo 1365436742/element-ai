@@ -37,7 +37,11 @@ import {
   arrow,
   autoUpdate,
 } from '@floating-ui/vue'
-import { defaultNamespace, useNamespace } from '@element-ai-vue/hooks'
+import {
+  defaultNamespace,
+  useDevice,
+  useNamespace,
+} from '@element-ai-vue/hooks'
 import {
   registerActiveTooltip,
   unregisterActiveTooltip,
@@ -47,6 +51,8 @@ import { tooltipProps, tooltipEmits } from './props'
 defineOptions({
   name: 'ElATooltip',
 })
+
+const { isTouchDevice } = useDevice()
 
 const props = defineProps(tooltipProps)
 const emit = defineEmits(tooltipEmits)
@@ -131,7 +137,7 @@ const tooltipInstance = {
 }
 
 const show = () => {
-  if (props.disabled) return
+  if (props.disabled || isTouchDevice.value) return
   clearTimers()
   showTimer = setTimeout(() => {
     // 注册到管理器，关闭其他 tooltip

@@ -1,5 +1,8 @@
 <template>
-  <div v-if="fileList.length" :class="ns.b()">
+  <div
+    v-if="fileList.length"
+    :class="[ns.b(), ns.is('mobile-width', isMobileWidth)]"
+  >
     <div
       v-for="(item, index) in fileList"
       :key="item.fileId"
@@ -85,7 +88,7 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
 import { isImageFile, parseFileSize } from '@element-ai-vue/utils'
-import { useLocale, useNamespace } from '@element-ai-vue/hooks'
+import { useDevice, useLocale, useNamespace } from '@element-ai-vue/hooks'
 import { FilesCardEmitsType, filesCardProps } from './props'
 import { FilesUploadItem } from '../files-upload'
 import TooltipText from './tooltip-text.vue'
@@ -102,6 +105,7 @@ const emits = defineEmits<FilesCardEmitsType>()
 const { t } = useLocale()
 const fileList = useVModel(props, 'modelValue')
 const ns = useNamespace('files-card')
+const { isMobileWidth } = useDevice()
 
 const removeFile = (index: number) => {
   fileList.value.splice(index, 1)

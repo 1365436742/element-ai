@@ -38,6 +38,20 @@
       top: 50%;
       transform: translateY(-50%) scale(1.15);
       gap: 10px;
+      &.is-mobile-width {
+        left: 20px;
+        right: 20px;
+        padding: 0 20px;
+        justify-content: space-between;
+      }
+    }
+    @include m(left-action) {
+      display: flex;
+      gap: 10px;
+    }
+    @include m(right-action) {
+      display: flex;
+      gap: 10px;
     }
     @include m(action-download) {
       display: flex;
@@ -48,9 +62,12 @@
       gap: 4px;
       border-radius: var(--#{$namespace}-border-radius-btn);
 
-      &:hover {
-        background-color: var(--#{$namespace}-copy-bg-color);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--#{$namespace}-copy-bg-color);
+        }
       }
+
       .element-ai-vue-iconfont {
         font-size: 16px;
       }
@@ -80,13 +97,23 @@
       border-radius: var(--#{$namespace}-border-radius-btn);
       white-space: nowrap;
       font-size: 14px;
-      &:hover {
-        background-color: var(--#{$namespace}-copy-bg-color);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--#{$namespace}-copy-bg-color);
+        }
       }
     }
   }
 
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      .#{$B}__toolbar {
+        display: flex;
+      }
+    }
+  }
+
+  @media (hover: none) {
     .#{$B}__toolbar {
       display: flex;
     }

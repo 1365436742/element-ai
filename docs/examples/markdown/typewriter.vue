@@ -56,7 +56,7 @@ __这也是粗体文本__   _这也是斜体文本_
 console.log(123); 
 \`\`\`
 
-# js代码块
+# mermaid流程图
 \`\`\`mermaid
 flowchart TD
     A[用户访问注册页面] --> B{输入注册信息}

@@ -17,35 +17,44 @@
             <span>{{ t('el.codeMermaid.download', '下载图片') }}</span>
           </div>
         </div>
-        <div :class="ns.em('fullscreen', 'action-other')">
-          <Tooltip :content="t('el.codeMermaid.zoomOut', '缩小')">
-            <span
-              class="element-ai-vue-iconfont icon-zoom-out"
-              :class="ns.em('toolbar', 'item')"
-              @click="zoomOut"
-            ></span>
-          </Tooltip>
-          <Tooltip :content="t('el.codeMermaid.zoomIn', '放大')">
-            <span
-              class="element-ai-vue-iconfont icon-zoom-in"
-              :class="ns.em('toolbar', 'item')"
-              @click="zoomIn"
-            ></span>
-          </Tooltip>
-          <Tooltip :content="t('el.codeMermaid.resetZoom', '适应页面')">
-            <span
-              class="element-ai-vue-iconfont icon-adapt-page"
-              :class="ns.em('toolbar', 'item')"
-              @click="resetZoom"
-            ></span>
-          </Tooltip>
-          <Tooltip :content="t('el.codeMermaid.close', '关闭')">
-            <span
-              class="element-ai-vue-iconfont icon-close"
-              :class="ns.em('toolbar', 'item')"
-              @click="toggleFullscreen"
-            ></span>
-          </Tooltip>
+        <div
+          :class="[
+            ns.em('fullscreen', 'action-other'),
+            ns.is('mobile-width', isMobileWidth),
+          ]"
+        >
+          <div :class="ns.em('fullscreen', 'left-action')">
+            <Tooltip :content="t('el.codeMermaid.zoomOut', '缩小')">
+              <span
+                class="element-ai-vue-iconfont icon-zoom-out"
+                :class="ns.em('toolbar', 'item')"
+                @click="zoomOut"
+              ></span>
+            </Tooltip>
+            <Tooltip :content="t('el.codeMermaid.zoomIn', '放大')">
+              <span
+                class="element-ai-vue-iconfont icon-zoom-in"
+                :class="ns.em('toolbar', 'item')"
+                @click="zoomIn"
+              ></span>
+            </Tooltip>
+          </div>
+          <div :class="ns.em('fullscreen', 'right-action')">
+            <Tooltip :content="t('el.codeMermaid.resetZoom', '适应页面')">
+              <span
+                class="element-ai-vue-iconfont icon-adapt-page"
+                :class="ns.em('toolbar', 'item')"
+                @click="resetZoom"
+              ></span>
+            </Tooltip>
+            <Tooltip :content="t('el.codeMermaid.close', '关闭')">
+              <span
+                class="element-ai-vue-iconfont icon-close"
+                :class="ns.em('toolbar', 'item')"
+                @click="toggleFullscreen"
+              ></span>
+            </Tooltip>
+          </div>
         </div>
       </div>
     </slot>
@@ -129,6 +138,7 @@ import { useFullscreen } from '@vueuse/core'
 import {
   useCopy,
   useD3Zoom,
+  useDevice,
   useLocale,
   useNamespace,
 } from '@element-ai-vue/hooks'
@@ -155,7 +165,9 @@ defineOptions({
 
 const tooltipRef = useTemplateRef('tooltipRef')
 const ns = useNamespace('code-mermaid')
+const { isMobileWidth } = useDevice()
 const { t } = useLocale()
+
 const previewRef = useTemplateRef<HTMLElement>('previewRef')
 const { isCopied, onCopy: copyContent } = useCopy()
 
@@ -173,7 +185,7 @@ const isFullscreen = computed(() => {
 })
 
 const { scale, translateX, translateY, initZoom, zoomIn, zoomOut, resetZoom } =
-  useD3Zoom(previewRef)
+  useD3Zoom(previewRef, props, isFullscreen)
 
 const config = computed(() => {
   return {

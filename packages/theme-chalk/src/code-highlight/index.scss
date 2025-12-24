@@ -41,8 +41,10 @@
       align-items: center;
       justify-content: center;
       border-radius: var(--#{$namespace}-border-radius-btn);
-      &:hover {
-        background-color: var(--#{$namespace}-copy-bg-color);
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--#{$namespace}-copy-bg-color);
+        }
       }
       .element-ai-vue-iconfont {
         font-size: 14px;

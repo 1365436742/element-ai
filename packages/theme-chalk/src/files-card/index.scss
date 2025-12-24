@@ -14,11 +14,22 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  padding: 5px 0;
+  &.is-mobile-width {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
   @include e(info-item) {
     position: relative;
-    &:hover {
-      .#{$namespace}-files-card__close-icon {
-        display: block;
+    @media (hover: hover) {
+      &:hover {
+        .#{$namespace}-files-card__close-icon {
+          display: block;
+        }
       }
     }
   }
@@ -150,8 +161,11 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    display: none;
+    display: block;
     font-size: 20px;
+    @media (hover: hover) {
+      display: none;
+    }
   }
 }
 
