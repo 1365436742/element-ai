@@ -46,5 +46,9 @@ import { ElABubble } from 'element-ai-vue'
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 8px;
+  flex-shrink: 0;
+  :deep(.el-ai-bubble__content-wrapper) {
+    width: auto;
+  }
 }
 </style>
