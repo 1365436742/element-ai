@@ -114,9 +114,18 @@ export function copyThemeChalkSource() {
   )
 }
 
+/**
+ * copy font files (woff2, woff, ttf) to dist folder
+ */
+export function copyFontFiles() {
+  return src(path.resolve(__dirname, 'src/font/*.{woff2,woff,ttf}')).pipe(
+    dest(path.resolve(epOutput, 'dist'))
+  )
+}
+
 export const build: TaskFunction = parallel(
   copyThemeChalkSource,
-  series(buildThemeChalk, buildDarkCssVars, copyThemeChalkBundle)
+  series(buildThemeChalk, buildDarkCssVars, copyFontFiles, copyThemeChalkBundle)
 )
 
 export default build

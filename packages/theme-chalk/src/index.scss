@@ -13,4 +13,4 @@
 @use 'thinking/index.scss' as thinking;
 @use 'bubble/index.scss' as bubble;
 @use 'bubble-list/index.scss' as bubble-list;
-@import url('./font/iconfont.css');
+@use 'font/iconfont.css' as iconfont;

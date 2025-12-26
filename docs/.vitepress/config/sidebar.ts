@@ -4,8 +4,8 @@ export const zhSidebar: DefaultTheme.Sidebar = [
   {
     text: '',
     items: [
-      { text: '快速开始', link: '/zh/start' },
       { text: '简介', link: '/zh/intro' },
+      { text: '快速开始', link: '/zh/start' },
     ],
   },
   {
@@ -57,8 +57,8 @@ export const enSidebar: DefaultTheme.Sidebar = [
   {
     text: '',
     items: [
-      { text: 'Quick Start', link: '/en/start' },
       { text: 'Introduction', link: '/en/intro' },
+      { text: 'Quick Start', link: '/en/start' },
     ],
   },
   {
