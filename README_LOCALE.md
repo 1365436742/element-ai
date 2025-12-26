@@ -5,6 +5,3 @@ Oxc、Prettier - Code formatter
 # TODO
 
 1. config-provider 主题全局配置
-2. 思考实现 (修复有图片插槽的时候获取的宽度不准)
-3. 对话气泡
-4. 对话列表

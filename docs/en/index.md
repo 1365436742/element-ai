@@ -4,21 +4,29 @@ layout: home
 
 hero:
   name: 'element-ai-vue'
-  text: 'Vue3 Component Library for the AI Era'
-  tagline: My great project tagline
+  text: 'Enterprise-level AI Interaction Component Library'
+  image: '/logo.svg'
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /en/markdown-examples
+      text: Get Started
+      link: /en/start
     - theme: alt
-      text: API Examples
-      link: /en/api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      text: Component Preview
+      link: /en/base/markdown
 ---
+
+::: code-group
+
+```sh [npm]
+$ npm install element-ai-vue
+```
+
+```sh [pnpm]
+$ pnpm install element-ai-vue
+```
+
+```sh [yarn]
+$ yarn add element-ai-vue
+```
+
+:::

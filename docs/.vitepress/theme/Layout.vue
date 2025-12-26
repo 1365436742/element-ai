@@ -35,7 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <ElAConfigProvider :locale="localeMap">
+  <ElAConfigProvider :locale="configProviderLocale">
     <Layout />
   </ElAConfigProvider>
 </template>
