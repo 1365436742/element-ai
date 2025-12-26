@@ -416,10 +416,10 @@ setText(allText)
 
 ## Slots
 
-| Slot Name                       | Description                     | Parameters                                                                 |
-| ------------------------------- | ------------------------------- | -------------------------------------------------------------------------- |
-| mermaid                         | Custom Mermaid code block render | `{ content, language, theme, ...codeMermaidProps }`                        |
-| code-mermaid-toolbar            | Custom Mermaid toolbar          | See [`CodeMermaid`](/en/base/code-mermaid.html#slots) component docs       |
-| code-mermaid-fullscreen-toolbar | Custom Mermaid fullscreen toolbar | See [`CodeMermaid`](/en/base/code-mermaid.html#slots) component docs       |
-| code                            | Custom code block render        | `{ content, language, theme, ...codeHighlightProps }`                      |
-| code-highlight-header           | Custom code block header        | See [`CodeHighlight`](/en/base/code-highlight.html#slots) component docs   |
+| Slot Name                       | Description                       | Parameters                                                               |
+| ------------------------------- | --------------------------------- | ------------------------------------------------------------------------ |
+| mermaid                         | Custom Mermaid code block render  | `{ content, language, theme, ...codeMermaidProps }`                      |
+| code-mermaid-toolbar            | Custom Mermaid toolbar            | See [`CodeMermaid`](/en/base/code-mermaid.html#slots) component docs     |
+| code-mermaid-fullscreen-toolbar | Custom Mermaid fullscreen toolbar | See [`CodeMermaid`](/en/base/code-mermaid.html#slots) component docs     |
+| code                            | Custom code block render          | `{ content, language, theme, ...codeHighlightProps }`                    |
+| code-highlight-header           | Custom code block header          | See [`CodeHighlight`](/en/base/code-highlight.html#slots) component docs |

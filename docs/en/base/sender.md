@@ -451,28 +451,28 @@ const { handleFileUpload } = useFileOperation(commonProps, fileList)
 
 ## Props
 
-| Property                      | Description                                                           | Type                                               | Default     |
-| ----------------------------- | --------------------------------------------------------------------- | -------------------------------------------------- | ----------- |
-| v-model                       | Input box HTML content                                                | `string`                                           | `''`        |
-| v-model:show-input-tag-prefix | Whether to show input prefix tag                                      | `boolean`                                          | `false`     |
-| theme                         | Theme                                                                 | `'light' \| 'dark'`                                | `'light'`   |
-| placeholder                   | Placeholder text                                                      | `string`                                           | `''`        |
-| disabled                      | Whether disabled                                                      | `boolean`                                          | `false`     |
-| extensions                    | [tiptap](https://tiptap.dev/docs/editor/extensions/overview) extensions | `Array<Extensions>`                                | `[]`        |
-| inputTagPrefixValue           | Input prefix tag content                                              | `string`                                           | `''`        |
+| Property                      | Description                                                                       | Type                                               | Default     |
+| ----------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------- | ----------- |
+| v-model                       | Input box HTML content                                                            | `string`                                           | `''`        |
+| v-model:show-input-tag-prefix | Whether to show input prefix tag                                                  | `boolean`                                          | `false`     |
+| theme                         | Theme                                                                             | `'light' \| 'dark'`                                | `'light'`   |
+| placeholder                   | Placeholder text                                                                  | `string`                                           | `''`        |
+| disabled                      | Whether disabled                                                                  | `boolean`                                          | `false`     |
+| extensions                    | [tiptap](https://tiptap.dev/docs/editor/extensions/overview) extensions           | `Array<Extensions>`                                | `[]`        |
+| inputTagPrefixValue           | Input prefix tag content                                                          | `string`                                           | `''`        |
 | enterBreak                    | Whether Enter creates new line. When `false`, Enter triggers `enterPressed` event | `boolean`                                          | `false`     |
-| onHandleKeyDown               | Custom keyboard event handler                                         | `(view: EditorView, event: KeyboardEvent) => void` | -           |
-| variant                       | Layout variant                                                        | `'default' \| 'updown'`                            | `'default'` |
+| onHandleKeyDown               | Custom keyboard event handler                                                     | `(view: EditorView, event: KeyboardEvent) => void` | -           |
+| variant                       | Layout variant                                                                    | `'default' \| 'updown'`                            | `'default'` |
 
 ## Slots
 
-| Slot Name           | Description                      | Scope Parameters                    |
-| ------------------- | -------------------------------- | ----------------------------------- |
-| prefix              | Prefix content slot              | -                                   |
-| input-tag-prefix    | Custom input prefix tag content  | -                                   |
-| action-list         | Action bar list slot             | -                                   |
-| send-btn            | Send button slot                 | `{ disabled: boolean }`             |
-| select-slot-content | select-slot click popup slot     | `{ options: SenderSelectOption[] }` |
+| Slot Name           | Description                     | Scope Parameters                    |
+| ------------------- | ------------------------------- | ----------------------------------- |
+| prefix              | Prefix content slot             | -                                   |
+| input-tag-prefix    | Custom input prefix tag content | -                                   |
+| action-list         | Action bar list slot            | -                                   |
+| send-btn            | Send button slot                | `{ disabled: boolean }`             |
+| select-slot-content | select-slot click popup slot    | `{ options: SenderSelectOption[] }` |
 
 ## Events
 

@@ -144,30 +144,30 @@ When configuring `theme` and `mermaidConfig` individually, all components must h
 
 ## Props
 
-| Property                    | Type            | Required | Default | Description                                                                                    |
-| :-------------------------- | :-------------- | :------- | :------ | :--------------------------------------------------------------------------------------------- |
-| content                     | `string`        | Yes      | —       | Mermaid syntax content                                                                         |
-| disabledWheelZoom           | `boolean`       | No       | false   | Disable mouse wheel zoom and mouse movement (non-fullscreen mode)                              |
-| disabledFullscreenWheelZoom | `boolean`       | No       | false   | Disable mouse wheel zoom and mouse movement in fullscreen mode                                 |
-| theme                       | `string`        | No       | `base`  | Mermaid theme, supports `default`, `forest`, `dark`, `neutral`, `base`                         |
-| fullscreenMode              | `string`        | No       | `page`  | Fullscreen mode, supports `web` (web fullscreen) and `page` (page fullscreen)                  |
+| Property                    | Type            | Required | Default | Description                                                                                        |
+| :-------------------------- | :-------------- | :------- | :------ | :------------------------------------------------------------------------------------------------- |
+| content                     | `string`        | Yes      | —       | Mermaid syntax content                                                                             |
+| disabledWheelZoom           | `boolean`       | No       | false   | Disable mouse wheel zoom and mouse movement (non-fullscreen mode)                                  |
+| disabledFullscreenWheelZoom | `boolean`       | No       | false   | Disable mouse wheel zoom and mouse movement in fullscreen mode                                     |
+| theme                       | `string`        | No       | `base`  | Mermaid theme, supports `default`, `forest`, `dark`, `neutral`, `base`                             |
+| fullscreenMode              | `string`        | No       | `page`  | Fullscreen mode, supports `web` (web fullscreen) and `page` (page fullscreen)                      |
 | mermaidConfig               | `MermaidConfig` | No       | `{}`    | Mermaid config object, see [Mermaid Config](https://mermaid.js.org/config/schema-docs/config.html) |
 
 ## Slots
 
-| Slot Name          | Description        | Slot Parameters                                                                                                                                                                                                                                                                                                                      |
-| :----------------- | :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Slot Name          | Description        | Slot Parameters                                                                                                                                                                                                                                                                                                                                                           |
+| :----------------- | :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | fullscreen-toolbar | Fullscreen toolbar | `isCodeView`: Currently showing code(true) or mermaid chart(false)<br>`isCopied`: Copy status, 1s interval before next copy<br>`onCopy`: Copy code function<br>`toggleView`: Toggle between code and mermaid chart<br>`zoomIn`: Zoom in<br>`zoomOut`: Zoom out<br>`resetZoom`: Reset to default<br>`toggleFullscreen`: Toggle fullscreen<br>`downloadPng`: Download image |
-| toolbar            | Normal toolbar     | Same parameters as above                                                                                                                                                                                                                                                                                                             |
+| toolbar            | Normal toolbar     | Same parameters as above                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Ref
 
-| Method Name      | Description               | Parameters |
-| :--------------- | :------------------------ | :--------- |
-| toggleView       | Toggle code/chart view    | -          |
-| zoomIn           | Zoom in                   | -          |
-| zoomOut          | Zoom out                  | -          |
-| resetZoom        | Reset zoom                | -          |
-| toggleFullscreen | Toggle fullscreen         | -          |
-| downloadPng      | Download PNG image        | -          |
-| onCopy           | Copy code                 | -          |
+| Method Name      | Description            | Parameters |
+| :--------------- | :--------------------- | :--------- |
+| toggleView       | Toggle code/chart view | -          |
+| zoomIn           | Zoom in                | -          |
+| zoomOut          | Zoom out               | -          |
+| resetZoom        | Reset zoom             | -          |
+| toggleFullscreen | Toggle fullscreen      | -          |
+| downloadPng      | Download PNG image     | -          |
+| onCopy           | Copy code              | -          |

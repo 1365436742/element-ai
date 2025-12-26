@@ -28,10 +28,10 @@ Thinking component for displaying collapsible thought processes or detailed cont
 
 ## Props
 
-| Property | Description   | Type      | Default |
-| :------- | :------------ | :-------- | :------ |
+| Property | Description      | Type      | Default |
+| :------- | :--------------- | :-------- | :------ |
 | v-model  | Whether expanded | `boolean` | `false` |
-| title    | Title         | `string`  | -       |
+| title    | Title            | `string`  | -       |
 
 ## Slots
 

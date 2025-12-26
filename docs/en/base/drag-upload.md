@@ -24,29 +24,29 @@ DragUpload drag and drop upload component. Its props are the same as FilesUpload
 
 ## Props
 
-| Property        | Description                                           | Type                | Default |
-| --------------- | ----------------------------------------------------- | ------------------- | ------- |
-| v-model         | File list binding value                               | `FilesUploadItem[]` | `[]`    |
-| multiple        | Whether to support multiple file selection            | `boolean`           | `false` |
+| Property        | Description                                                  | Type                | Default |
+| --------------- | ------------------------------------------------------------ | ------------------- | ------- |
+| v-model         | File list binding value                                      | `FilesUploadItem[]` | `[]`    |
+| multiple        | Whether to support multiple file selection                   | `boolean`           | `false` |
 | accept          | Accepted upload file types, e.g., `['.jpg', '.png', '.pdf']` | `string[]`          | `[]`    |
-| max-file-length | Maximum number of files to upload                     | `number`            | `10`    |
-| file-size-limit | Single file size limit in MB                          | `number`            | `5`     |
-| disabled        | Whether disabled                                      | `boolean`           | `false` |
+| max-file-length | Maximum number of files to upload                            | `number`            | `10`    |
+| file-size-limit | Single file size limit in MB                                 | `number`            | `5`     |
+| disabled        | Whether disabled                                             | `boolean`           | `false` |
 
 ## Events
 
-| Event Name        | Description                                         | Type                                                   |
-| ----------------- | --------------------------------------------------- | ------------------------------------------------------ |
+| Event Name        | Description                                                | Type                                                   |
+| ----------------- | ---------------------------------------------------------- | ------------------------------------------------------ |
 | upload-before     | Hook before upload, can be used to filter or process files | `(fileList: File[]) => Promise<File[]> \| File[]`      |
-| upload            | Custom upload function                              | `(fileUploadItems: FilesUploadItem[]) => Promise<any>` |
-| update:modelValue | Triggered when file list changes                    | `(fileList: FilesUploadItem[]) => void`                |
-| error-message     | Triggered on upload error                           | `(params: FilesUploadErrorParams) => void`             |
+| upload            | Custom upload function                                     | `(fileUploadItems: FilesUploadItem[]) => Promise<any>` |
+| update:modelValue | Triggered when file list changes                           | `(fileList: FilesUploadItem[]) => void`                |
+| error-message     | Triggered on upload error                                  | `(params: FilesUploadErrorParams) => void`             |
 
 ## Slots
 
-| Slot Name    | Description                                    |
-| ------------ | ---------------------------------------------- |
-| default      | Custom upload trigger area content             |
+| Slot Name    | Description                                       |
+| ------------ | ------------------------------------------------- |
+| default      | Custom upload trigger area content                |
 | mark-content | Custom style slot for dragging files to drop area |
 
 ## Type Definitions

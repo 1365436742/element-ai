@@ -37,8 +37,9 @@ Bubble component for displaying conversation messages, supporting multiple style
         <template #header v-if="!placement">
           <ElAThinking title="Today's Topic: AI Era">
             <div class="think">
-              Hello, I am Element AI
-              Vue, an AI component library built with Vue3 and TypeScript, dedicated to providing developers with convenient and efficient AI solutions.
+              Hello, I am Element AI Vue, an AI component library built with
+              Vue3 and TypeScript, dedicated to providing developers with
+              convenient and efficient AI solutions.
             </div>
           </ElAThinking>
         </template>
@@ -141,16 +142,16 @@ const start = () => {
 
 ## Props
 
-| Property   | Description                                                        | Type                                                 | Default     |
-| ---------- | ------------------------------------------------------------------ | ---------------------------------------------------- | ----------- |
-| placement  | Bubble position                                                    | `'start' \| 'end'`                                   | `'start'`   |
-| content    | Bubble content                                                     | `string`                                             | `''`        |
-| typing     | Whether to enable typewriter effect                                | `boolean`                                            | `false`     |
+| Property   | Description                                                         | Type                                                 | Default     |
+| ---------- | ------------------------------------------------------------------- | ---------------------------------------------------- | ----------- |
+| placement  | Bubble position                                                     | `'start' \| 'end'`                                   | `'start'`   |
+| content    | Bubble content                                                      | `string`                                             | `''`        |
+| typing     | Whether to enable typewriter effect                                 | `boolean`                                            | `false`     |
 | typingOver | Content output completion flag, typewriter auto-completes when true | `boolean`                                            | `true`      |
-| loading    | Whether to show loading state                                      | `boolean`                                            | `false`     |
-| isMarkdown | Whether to render Markdown content                                 | `boolean`                                            | `false`     |
-| variant    | Bubble variant style                                               | `'filled' \| 'outlined' \| 'shadow' \| 'borderless'` | `'filled'`  |
-| shape      | Bubble shape                                                       | `'default' \| 'round' \| 'corner'`                   | `'default'` |
+| loading    | Whether to show loading state                                       | `boolean`                                            | `false`     |
+| isMarkdown | Whether to render Markdown content                                  | `boolean`                                            | `false`     |
+| variant    | Bubble variant style                                                | `'filled' \| 'outlined' \| 'shadow' \| 'borderless'` | `'filled'`  |
+| shape      | Bubble shape                                                        | `'default' \| 'round' \| 'corner'`                   | `'default'` |
 
 ## Slots
 
@@ -163,6 +164,6 @@ const start = () => {
 
 ## Exposes
 
-| Method Name     | Description                        | Type         |
-| --------------- | ---------------------------------- | ------------ |
+| Method Name     | Description                            | Type         |
+| --------------- | -------------------------------------- | ------------ |
 | overTyperwriter | Immediately complete typewriter effect | `() => void` |

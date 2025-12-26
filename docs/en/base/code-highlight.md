@@ -113,18 +113,18 @@ Default supported languages: `javascript`, `typescript`, `vue`, `html`, `css`, `
 
 ## Props
 
-| Property        | Type                | Required | Default | Description                                                                       |
-| :-------------- | :------------------ | :------- | :------ | :-------------------------------------------------------------------------------- |
-| content         | `string`            | Yes      | —       | Code content to highlight                                                         |
-| language        | `string`            | No       | —       | Code language                                                                     |
-| theme           | `string`            | No       | `light` | Highlight theme, defaults support `light`, `dark`                                 |
+| Property        | Type                | Required | Default | Description                                                                        |
+| :-------------- | :------------------ | :------- | :------ | :--------------------------------------------------------------------------------- |
+| content         | `string`            | Yes      | —       | Code content to highlight                                                          |
+| language        | `string`            | No       | —       | Code language                                                                      |
+| theme           | `string`            | No       | `light` | Highlight theme, defaults support `light`, `dark`                                  |
 | extendLanguages | `BundledLanguage[]` | No       | `[]`    | Additional languages to load, see [Shiki Languages](https://shiki.style/languages) |
-| extendThemes    | `BundledTheme[]`    | No       | `[]`    | Additional themes to load, see [Shiki Themes](https://shiki.style/themes)         |
+| extendThemes    | `BundledTheme[]`    | No       | `[]`    | Additional themes to load, see [Shiki Themes](https://shiki.style/themes)          |
 
 ## Slots
 
-| Slot Name | Description          | Slot Parameters                                                                                                                         |
-| :-------- | :------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
+| Slot Name | Description           | Slot Parameters                                                                                                                          |
+| :-------- | :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
 | header    | Custom header content | `content`: Code content<br>`language`: Language<br>`isCopied`: Copy status, 1s interval before next copy<br>`onCopy`: Copy code function |
 
 ## Ref

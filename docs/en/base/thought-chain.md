@@ -212,10 +212,10 @@ html.dark {
 
 ## Slots
 
-| Slot Name   | Description       | Scope Parameters       |
-| :---------- | :---------------- | :--------------------- |
-| icon        | Custom icon       | item: ThoughtChainItem |
-| title       | Custom title      | item: ThoughtChainItem |
+| Slot Name   | Description        | Scope Parameters       |
+| :---------- | :----------------- | :--------------------- |
+| icon        | Custom icon        | item: ThoughtChainItem |
+| title       | Custom title       | item: ThoughtChainItem |
 | description | Custom description | item: ThoughtChainItem |
 
 ## Type Definitions

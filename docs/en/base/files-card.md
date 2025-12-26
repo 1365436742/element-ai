@@ -30,10 +30,10 @@ This component uses the same data structure as `DragUpload` and `FilesUpload` v-
 
 ## Props
 
-| Property     | Description                    | Type                    | Default                                         |
-| ------------ | ------------------------------ | ----------------------- | ----------------------------------------------- |
-| v-model      | File list binding value        | `FilesUploadItem[]`     | `[]`                                            |
-| ext-icon-map | Extended file type icons       | `Record<string,string>` | Current icons: `doc`, `docx`, `pdf`, `default`  |
+| Property     | Description              | Type                    | Default                                        |
+| ------------ | ------------------------ | ----------------------- | ---------------------------------------------- |
+| v-model      | File list binding value  | `FilesUploadItem[]`     | `[]`                                           |
+| ext-icon-map | Extended file type icons | `Record<string,string>` | Current icons: `doc`, `docx`, `pdf`, `default` |
 
 ## Type Definitions
 

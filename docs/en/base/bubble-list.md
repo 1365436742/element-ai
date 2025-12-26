@@ -31,20 +31,20 @@ Smart chat scroll container component, designed specifically for conversation sc
 
 ## Props
 
-| Property            | Description                                              | Type     | Default |
-| ------------------- | -------------------------------------------------------- | -------- | ------- |
+| Property            | Description                                                     | Type     | Default |
+| ------------------- | --------------------------------------------------------------- | -------- | ------- |
 | backButtonThreshold | Scroll distance threshold to trigger back-to-bottom button (px) | `number` | 80      |
-| bottomThreshold     | Distance threshold to determine "scrolled to bottom" (px) | `number` | 20      |
+| bottomThreshold     | Distance threshold to determine "scrolled to bottom" (px)       | `number` | 20      |
 
 ## Ref
 
 Access component instance through `ref` to call the following methods:
 
-| Method Name    | Description           | Parameters                         |
-| -------------- | --------------------- | ---------------------------------- |
-| scrollToBottom | Scroll to bottom      | `(smooth?: string)`                |
-| scrollToTop    | Scroll to top         | `(smooth?: string)`                |
-| scrollToIndex  | Scroll to position    | `(index: number, smooth?: string)` |
+| Method Name    | Description        | Parameters                         |
+| -------------- | ------------------ | ---------------------------------- |
+| scrollToBottom | Scroll to bottom   | `(smooth?: string)`                |
+| scrollToTop    | Scroll to top      | `(smooth?: string)`                |
+| scrollToIndex  | Scroll to position | `(index: number, smooth?: string)` |
 
 ## Slots
 
